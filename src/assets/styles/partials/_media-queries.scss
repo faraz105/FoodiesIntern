@@ -1,0 +1,47 @@
+$phone-res-max-width: 400px;
+$phoneX-res-max-width: 599px;
+$tablet-res-max-width: 767px;
+$tabletX-res-max-width: 899px;
+$desktop-res-max-width: 1199px;
+$desktopX-res-min-width: 1200px;
+$desktopXX-res-min-width: 1600px;
+
+@mixin mediaQueryScreen($deviceType) {
+  //   max media queries
+  @if $deviceType == desktop {
+    @media (max-width: $desktop-res-max-width) {
+      @content;
+    }
+  }
+  @if $deviceType == tabletX {
+    @media (max-width: $tabletX-res-max-width) {
+      @content;
+    }
+  }
+  @if $deviceType == tablet {
+    @media (max-width: $tablet-res-max-width) {
+      @content;
+    }
+  }
+  @if $deviceType == phoneX {
+    @media (max-width: $phoneX-res-max-width) {
+      @content;
+    }
+  }
+  @if $deviceType == phone {
+    @media (max-width: $phone-res-max-width) {
+      @content;
+    }
+  }
+  //   min media queries
+  @if $deviceType == desktopX {
+    @media (min-width: $desktopX-res-min-width) {
+      @content;
+    }
+  }
+  @if $deviceType == desktopXX {
+    @media (min-width: $desktopXX-res-min-width) {
+      @content;
+    }
+  }
+}

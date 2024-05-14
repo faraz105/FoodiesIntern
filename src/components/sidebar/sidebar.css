@@ -1,0 +1,39 @@
+.sidebar {
+  padding-top: 20px;
+  text-align: center;
+  position: relative;
+}
+.sidebar > h1 {
+  margin: 0;
+  font-size: 25px;
+}
+.sidebar > img {
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+}
+.sidebar ul {
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  margin-top: 20px;
+}
+.sidebar ul li {
+  list-style: none;
+}
+.sidebar ul li a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  width: 100%;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.sidebar ul li a:hover {
+  background-color: rgb(49, 49, 49);
+}
+.sidebar ul li .active {
+  background-color: rgb(49, 49, 49);
+}/*# sourceMappingURL=sidebar.css.map */

@@ -1,0 +1,21 @@
+@mixin widthHeight($width, $height) {
+  width: $width;
+  height: $height;
+}
+@mixin alignCenter($alignCenter, $justifyCenter, $gap) {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: $alignCenter;
+  justify-content: $justifyCenter;
+  gap: $gap;
+}
+@mixin fontStyle($fontSize, $fontColor, $fontWeight) {
+  font-size: $fontSize;
+  color: $fontColor;
+  font-weight: $fontWeight;
+}
+
+@mixin row() {
+  display: flex;
+  flex-wrap: wrap;
+}

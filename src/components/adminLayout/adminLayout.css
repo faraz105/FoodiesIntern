@@ -1,0 +1,58 @@
+.mainSection {
+  position: relative;
+}
+.mainSection .mainHeader {
+  background-color: #efefef;
+  padding: 12px;
+  margin-bottom: 25px;
+  position: sticky;
+  top: 0;
+  z-index: 99;
+}
+.mainSection .mainSidebarContent {
+  display: flex;
+}
+.mainSection .mainSidebarContent .mainSidebar {
+  width: 240px;
+  background-color: rgb(27, 27, 27);
+  color: white;
+  padding: 0;
+  overflow-y: auto;
+  overflow: visible;
+  overflow: visible;
+  z-index: 9;
+  position: sticky;
+  top: 80px;
+  height: 86vh;
+}
+.mainSection .mainSidebarContent .mainSidebar > .MuiDrawer-root {
+  height: 100%;
+}
+.mainSection .mainSidebarContent .mainSidebar > .MuiDrawer-root > .MuiPaper-root {
+  position: relative;
+}
+.mainSection .mainSidebarContent .mainSidebar .arrow {
+  width: 30px;
+  background-color: #f32020;
+  height: 30px;
+  position: absolute;
+  right: -22px;
+  top: 5px;
+  text-align: center;
+  line-height: 12px;
+  font-size: 20px;
+  padding-top: 6px;
+  z-index: 999;
+  cursor: pointer;
+}
+.mainSection .mainSidebarContent .mainContent {
+  padding: 20px 15px;
+  flex: 1;
+}
+.mainSection .remMar {
+  margin-left: 62px !important;
+}
+
+.slideOff {
+  width: 62px !important;
+}/*# sourceMappingURL=adminLayout.css.map */
