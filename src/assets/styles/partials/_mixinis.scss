@@ -19,3 +19,8 @@
   display: flex;
   flex-wrap: wrap;
 }
+@mixin column() {
+  display: flex;
+  flex-direction: column;
+}
+

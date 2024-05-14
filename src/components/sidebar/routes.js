@@ -1,10 +1,22 @@
 const MenuData = [
   {
+    title: "Dashboard",
+    link: "/dashboard"
+  },
+  {
     title: "Dropdown 1",
     dropdown: true,
     items: [
       { title: "Option 1", link: "/option1" },
       { title: "Option 2", link: "/option2" }
+    ]
+  },
+  {
+    title: "Store",
+    dropdown: true,
+    items: [
+      { title: "store 1", link: "/sdas" },
+      { title: "contact", link: "/contact" }
     ]
   },
   {
