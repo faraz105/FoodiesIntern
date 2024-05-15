@@ -7,12 +7,13 @@ import Login from './pages/LoginPage';
 import Register from "./pages/RegisterPage";
 import NoPage from "./pages/nopage";
 import MerchantCard from "./pages/MerchantCard";
+import ManageUser from './pages/ManageUser/ManageUser';
 
 function App() {
   return (
     <BrowserRouter>
-    <Routes>
-    <Route path="/login" element={<Login />} />
+    <Routes> 
+    <Route path="/login" element={<Login />} />  
     <Route path="/signup" element={<Register />} />
 
       <Route path="/" element={<AdminLayout />}>
@@ -20,6 +21,7 @@ function App() {
         <Route path="contact" element={<Contact />} />
         <Route path="merchantCard" element={<MerchantCard />} />
         <Route path="*" element={<NoPage />} />
+        <Route path="manageuser" element={<ManageUser />} />
       </Route>
     </Routes>
   </BrowserRouter>
