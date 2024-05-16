@@ -1,0 +1,38 @@
+
+@import "../../assets/styles/partials/allPartialFile";
+.mainhaider{
+    background-color: $primary_white;
+    @include alignCenter(center,inherit,$spacing_10);
+    .logo{
+        margin: 0;
+    }
+    .navLinks{
+        flex: 1;
+        @include alignCenter(center,end,$spacing_5);
+        .notification{
+            position: relative;
+            span{
+                position: absolute;
+                top: -17px;
+                right: -9px;
+                @include widthHeight(17px ,17px);
+                z-index: 9;
+                background-color: #F57E2A;
+                font-size: $font_10;
+                @include alignCenter(center,center,0);
+                border-radius: $border_radius_round;
+                color: $primary_white;
+            }
+        }
+        .selectDropdown{
+            margin-left: 10px;
+            fieldset{
+                @include dropdownBorder();
+                legend{
+                    display: none;
+                }
+            }
+
+        }
+    }
+}
