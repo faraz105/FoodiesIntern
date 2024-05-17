@@ -40,10 +40,8 @@ const Login = () => {
           // validationSchema={loginSchema}
           onSubmit={async (values) => {
             setLoading(true);
-            console.log("values", values);
             try {
               const res = await userLogin(values);
-              console.log("after login res: ", res);
               if (res?.status == 200) {
                 dispatch({
                   type: LOGIN,
@@ -58,7 +56,6 @@ const Login = () => {
               
             } catch (error) {
               setErrorMsg(error.response.data.error.message);
-              console.log("dadaa",error)
             }
           }}
         >
