@@ -1,0 +1,56 @@
+@import "../../assets/styles/partials/allPartialFile";
+.mainLayoutSection{
+    position: relative;
+    .mainHeader{
+        background-color: $primary_white;
+        padding: 10px 30px 5px;
+        margin-bottom: 20px;
+        position: sticky;
+        top: 0;
+        z-index: 99;
+        border-bottom: 1px solid $primary_grey_border;
+    }
+   
+    .mainSidebarContent{
+        display: flex;
+        
+        .mainSidebar{
+            width: 240px;
+            border-radius: 0 26px 0 0;
+            box-shadow: 0 0 6px 0 #0000001C;
+            overflow: hidden;
+            color: white;
+            padding: 0;
+            z-index: 9;
+            position: sticky;
+            top: 88px;
+            height: 86vh;
+            padding-top: 30px;
+            
+            .arrow {
+                width: 30px;
+                background-color: #f32020;
+                height: 30px;
+                position: absolute;
+                right: -22px;
+                top: 5px;
+                text-align: center;
+                line-height: 12px;
+                font-size: 20px;
+                padding-top: 6px;
+                z-index: 999;
+                cursor: pointer;
+            }
+        }
+        .mainContent{
+            padding: 20px 15px;
+            flex: 1;
+        }
+    }
+    .remMar{
+        margin-left: 62px !important;
+    }
+}
+.slideOff{
+    width: 62px !important;
+}

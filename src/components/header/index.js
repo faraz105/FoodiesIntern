@@ -1,6 +1,7 @@
 import React , {useState}from "react";
 import { Link } from "react-router-dom";
 import classes from "./header.module.scss";
+import  "./headerBuiltin.scss";
 import { useDispatch } from "react-redux";
 import { LOGOUT } from "../../constants";
 import { useNavigate } from "react-router-dom";
@@ -12,8 +13,6 @@ import FormControl from '@mui/material/FormControl';
 import ListItemText from '@mui/material/ListItemText';
 import Select from '@mui/material/Select';
 import InputAdornment from '@mui/material/InputAdornment';
-
-
 import Checkbox from '@mui/material/Checkbox';
 import logo from "../../assets/images/logo.svg";
 import bell from "../../assets/images/bell.svg";
@@ -47,9 +46,8 @@ const Header = () => {
       typeof value === 'string' ? value.split(',') : value,
     );
   };
-  console.log("value", restaurantName);
   return (
-    <nav className={classes.mainhaider}>
+    <nav className={classes.headerNav}>
       <div className={classes.logo}>
         <img src={logo} alt="logo" />
       </div>
@@ -57,7 +55,7 @@ const Header = () => {
         <div className={classes.notification}>
           <span>3</span> <img src={bell} alt="logo" />
         </div>
-        <div className={classes.selectDropdown}>
+        <div className={`${classes.selectDropdown} mainBuiltinStyle`}>
           <FormControl sx={{ m: 1, minWidth: 50 }}>
           {/* <InputLabel id="demo-multiple-checkbox-label">Tag</InputLabel> */}
             <Select 
@@ -72,8 +70,10 @@ const Header = () => {
                 if (selected.length === 0) {
                   return <em>Select Option</em>;
                 }
-    
-                return selected.join(', ');
+                if (selected.length === 1) {
+                  return selected[0];
+                }
+                return `${selected[0]}, ...`;
               }}
               startAdornment={<InputAdornment position="start">
               <img
@@ -92,14 +92,15 @@ const Header = () => {
                     <em>Select Option</em>
                   </MenuItem>
                {names.map((name) => (
-                  <MenuItem key={name} value={name}>
+                  <MenuItem key={name} value={name} className="selectBuiltinStyle">
                     <Checkbox checked={restaurantName.indexOf(name) > -1} />
                     <ListItemText primary={name} />
                   </MenuItem>
                 ))}
-                  <MenuItem>
-                    <Link to="#">All</Link>
-                  </MenuItem>
+                <div className={classes.dropLink}>
+                  <Link to="#">None</Link>
+                  <Link to="#">All</Link>
+                  </div>
             </Select>
           </FormControl>
         </div>

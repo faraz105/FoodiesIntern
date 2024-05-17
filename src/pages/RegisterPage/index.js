@@ -42,7 +42,6 @@ const Login = () => {
           initialValues={{ username: "", password: "" }}
           // validationSchema={loginSchema}
           onSubmit={async (values) => {
-            console.log("values",values)
             try {
               const res = await userSignUp(values);
          
@@ -51,7 +50,6 @@ const Login = () => {
                 }, 2000);
               
             } catch (error) {
-              console.log(error)
               setErrorMsg(error.response.data.error.message);
             }
           }}

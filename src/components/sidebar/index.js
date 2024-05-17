@@ -12,7 +12,8 @@ const drawerWidth = 240;
 
 const Sidebar = () => {
   const [openDropdown, setOpenDropdown] = useState(null); // State to track open dropdown
-  const [activeOption, setActiveOption] = useState(null);
+  const [activeOption, setActiveOption] = useState("Dashboard");
+  const [activeOptionDrop, setActiveOptionDrop] = useState(null);
 
   const handleClick = (dropdownId) => {
     setOpenDropdown((prevOpenDropdown) => (prevOpenDropdown === dropdownId ? null : dropdownId));
@@ -20,12 +21,17 @@ const Sidebar = () => {
 
   const handleOptionClick = (option) => {
     setActiveOption(option);
+
+  };
+  const handleOptionDropClick = (option) => {
+    setActiveOptionDrop(option)
+   
   };
 
   const handleItemClick = () => {
-    setOpenDropdown(null); // Close dropdown when any single item is clicked
+    setOpenDropdown(null); 
+    setActiveOptionDrop(null);
   };
-
   return (
     <Drawer
       sx={{
@@ -42,7 +48,12 @@ const Sidebar = () => {
           <Fragment key={index}>
             {menuItem.dropdown ? (
               <>
-                <ListItem button onClick={() => handleClick(index)}>
+                <ListItem button onClick={() =>
+                  {
+                    handleOptionDropClick(menuItem.title);
+                    handleClick(index)
+                  }}
+                  selected={activeOptionDrop === menuItem.title}>
                   <ListItemText primary={menuItem.title} />
                   {openDropdown === index ? <ExpandLess /> : <ExpandMore />}
                 </ListItem>
