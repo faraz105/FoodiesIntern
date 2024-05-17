@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect ,Fragment } from 'react';
 import Drawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
@@ -11,8 +11,8 @@ import menuData from './routes';
 const drawerWidth = 240;
 
 const Sidebar = () => {
-  const [openDropdown, setOpenDropdown] = React.useState(null); // State to track open dropdown
-  const [activeOption, setActiveOption] = React.useState(null);
+  const [openDropdown, setOpenDropdown] = useState(null); // State to track open dropdown
+  const [activeOption, setActiveOption] = useState(null);
 
   const handleClick = (dropdownId) => {
     setOpenDropdown((prevOpenDropdown) => (prevOpenDropdown === dropdownId ? null : dropdownId));
@@ -39,7 +39,7 @@ const Sidebar = () => {
     >
       <List>
         {menuData.map((menuItem, index) => (
-          <React.Fragment key={index}>
+          <Fragment key={index}>
             {menuItem.dropdown ? (
               <>
                 <ListItem button onClick={() => handleClick(index)}>
@@ -78,7 +78,7 @@ const Sidebar = () => {
                 <ListItemText primary={menuItem.title} />
               </ListItem>
             )}
-          </React.Fragment>
+          </Fragment>
         ))}
       </List>
     </Drawer>

@@ -70,7 +70,6 @@ const MerchantCard = () => {
       menuTabs: ["filterMenuTab"],
     };
   }, []);
-  console.log("cardDetail", cardDetail);
   const getAllCard = async () => {
     try {
       const headers = {

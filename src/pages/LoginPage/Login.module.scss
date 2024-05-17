@@ -37,7 +37,7 @@
         margin-bottom: 12px;
         @include fontStyle(40px, inherit, $font_weight_600);
         span {
-          color: $primary_blue;
+          color: $primary_orange
         }
         @include mediaQueryScreen(desktop) {
           font-size: 35px;
