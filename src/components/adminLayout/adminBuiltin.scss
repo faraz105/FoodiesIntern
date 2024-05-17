@@ -1,0 +1,79 @@
+@import "../../assets/styles/partials/allPartialFile";
+.sidebar { 
+    >.MuiDrawer-root{
+        height: 100%;
+        > .MuiPaper-root {
+            position: relative;
+            border: 0 !important;
+            padding: 0 20px;
+            ul{
+                a{
+                    border-radius: 50px !important;
+                    &:hover{
+                        background-color: $primary_orange_light !important;
+                    }
+                }
+                .MuiButtonBase-root{
+                    border-radius: 50px !important;
+                    margin-bottom: 5px;
+                    &:hover{
+                        background-color: $primary_orange_light !important;
+                    } 
+                    
+                }
+                .MuiCollapse-wrapperInner{
+                    a{
+                        position: relative;
+                        &::before{
+                            content: "-";
+                            position: absolute;
+                            left: 17px;
+                            margin-top: -4px;
+
+                        }
+                        &:hover{
+                            background-color: transparent !important;
+                            color: $primary_orange;
+                        }
+                    }
+                    a.Mui-selected{
+                        border-radius: 0 !important;
+                        background-color: transparent !important;
+                        color: $primary_orange !important;
+                        &::before{
+                            content: "-" !important;
+                            position: absolute;
+                            left: 17px !important;
+                            margin-top: -4px !important;
+                            color: $primary_orange !important;
+                            top: auto !important;
+                            bottom: auto !important;
+                            height: auto;
+                            width: auto;
+                            background-color: transparent;
+                        }
+                        &:hover{
+                            background-color: transparent !important;
+                            color: $primary_orange !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .Mui-selected{
+        background-color: $primary_orange_light !important;
+        color: $primary_orange !important;
+        position: relative;
+        &::before{
+            content: "";
+            position: absolute;
+            left: -20px;
+            top: 0;
+            bottom: 0;
+            @include widthHeight(4px, 100%);
+            background-color: $primary_orange;
+            border-radius: 0 20px 20px 0;
+        }
+    }
+}

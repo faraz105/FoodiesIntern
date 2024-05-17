@@ -1,0 +1,13 @@
+@import "../../assets/styles/partials/allPartialFile";
+.selectBuiltinStyle {
+  padding: 0px 15px 5px 3px !important;
+
+  &:first-child {
+    padding: 5px 15px 5px 15px !important;
+  }
+}
+.mainBuiltinStyle {
+        .MuiSelect-multiple {
+            padding: 5px 30px 8px 10px !important;
+        }
+}
