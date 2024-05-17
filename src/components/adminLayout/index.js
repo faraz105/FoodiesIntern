@@ -3,7 +3,6 @@ import { Outlet } from "react-router-dom";
 import Header from "../header";
 import Sidebar from "../sidebar";
 import classes from "./adminLayout.module.scss";
-import "./adminBuiltin.scss"
 
 const AdminLayout = () => {
   const [count , setCount]= useState(true)
@@ -17,7 +16,7 @@ const AdminLayout = () => {
             <Header />
           </div>
         <div className={classes.mainSidebarContent}>
-            <div className={`${classes.mainSidebar} sidebar`} >
+            <div className={classes.mainSidebar} >
               {/* <div className={classes.arrow" onClick={handleArrow}>→</div> */}
               <Sidebar count={count} />
             </div>
