@@ -34,7 +34,8 @@ export default function BasicTable({users}) {
               <TableCell align="right">{user.username}</TableCell>
               <TableCell align="right">{user.email}</TableCell>
               <TableCell align="right">{user.roles}</TableCell>
-              <TableCell align="right">{user.icons}</TableCell>
+              <TableCell align="right">{user.edit_Icon}</TableCell>
+              <TableCell align="right">{user.changePassword_icon}</TableCell>
             </TableRow>
           ))}
         </TableBody>
