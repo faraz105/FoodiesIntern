@@ -20,14 +20,16 @@ const Sidebar = () => {
 
 
   const pathSegments = location.pathname.split('/').filter(Boolean);
-  const itemLink = `/${pathSegments[0]}`;
+  
+  const itemLink = pathSegments.length > 1 ? `/${pathSegments[0]}` : "/dashboard";
   const dropLink = `${pathSegments[0]}`;
   const dropItemLink = `/${pathSegments[0]}/${pathSegments[1]}`;
   const [openDropdown, setOpenDropdown] = useState(null); 
   const [activeOption, setActiveOption] = useState(itemLink);
   const [activeOptionDrop, setActiveOptionDrop] = useState(dropLink);
   const [activeOptionDropItem, setActiveOptionDropItem] = useState(dropItemLink);
-  
+  console.log("pathSegments",pathSegments)
+  console.log("itemLink",itemLink)
   const handleClick = (dropdownId) => {
     setOpenDropdown((prevOpenDropdown) =>
       prevOpenDropdown === dropdownId ? null : dropdownId
