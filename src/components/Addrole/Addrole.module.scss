@@ -1,0 +1,97 @@
+@import "../../assets/styles/partials/allPartialFile";
+
+.mainAddrole {
+    width: 55%;
+    position: absolute;
+    top: 20%;
+    right: 20%;
+    gap: 0px;
+    border-radius: 40px;
+    background-color: $primary_white;
+
+    .Addroleheading {
+        @include alignCenter(center, space-between, "");
+        border-bottom: 1px solid gray;
+        padding: 10px 35px;
+
+        .p {
+            @include alignCenter($font_20, "", $font_weight_400);
+            line-height: 20px;
+            text-align: left;
+        }
+
+        .icon {
+            @include alignCenter(" ", "", $font_weight_400);
+            font-size: 30px;
+            color: $primary_orange;
+        }
+    }
+
+    .Addroleform {
+        @include alignCenter("", space-between, "");
+        padding: 20px 34px;
+
+        .Addroletyperole {
+            display: flex;
+            flex-direction: column;
+            gap: 13px;
+            width: 47%;
+
+            .Addroleinput {
+                @include widthHeight(100%, 54px);
+                top: 468px;
+                padding: -5px 18px;
+                padding-left: 9px;
+                border-radius: 48px;
+                border: 1px solid var(--light-gray, #CDCDCD);
+
+                &:focus {
+                    border: 1px solid $primary_orange;
+                    outline: none;
+                }
+            }
+        }
+    }
+}
+
+.Addroleconfirm {
+    display: flex;
+    justify-content: end;
+    padding: 0px 20px;
+
+    .Addroleconfirmbtn {
+        border: 0;
+        background: none;
+        @include fontStyle($font_18 , $primary_orange , $font_weight_400);
+        line-height: 21px;
+        text-align: left;
+        display: flex;
+        align-items: center;
+
+        .arrow {
+            width: 38px;
+        }
+
+    }
+}
+
+.Addrolesave {
+
+    text-align: center;
+    padding: 20px 0px;
+
+    .Addrolesavebtn {
+        @include widthHeight(350px, 45px);
+        gap: 0px;
+        border-radius: 48px;
+        opacity: 0px;
+        box-shadow: 0px 4px 5px 0px #FFFFFF73 inset;
+        background-color: $primary_orange;
+        border: 0;
+        box-shadow: 0px 6px 10px 0px #F57E2ACC;
+        @include fontStyle($font_16 , $primary_white , $font_weight_400);
+        line-height: 19px;
+        text-align: center;
+    }
+
+}

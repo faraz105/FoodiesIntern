@@ -1,0 +1,142 @@
+.wrapper {
+  width: 100%;
+  padding: 0px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.wrapper .mainrole {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: " ";
+  gap: 15px;
+}
+.wrapper .mainrole .role h3 {
+  font-size: 1.5rem;
+  color: #1c1d21;
+  font-weight: 500;
+  line-height: 0px;
+}
+.wrapper .mainrole .role p {
+  font-size: 1rem;
+  color: #9ea0a8;
+  font-weight: 300;
+  line-height: 20px;
+  margin-top: 5px;
+}
+.wrapper .mainrole .input {
+  width: 130px;
+  height: 35px;
+  padding-left: 20px;
+  border-radius: 20px;
+  border: 1px solid #CDCDCD;
+}
+.wrapper .buttons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: "";
+  justify-content: "";
+  gap: 20px;
+}
+.wrapper .buttons .rolebtn {
+  width: 137px;
+  height: 32px;
+  padding: 8px 16px 8px 16px;
+  gap: 4px;
+  border-radius: 20px;
+  border: 0;
+  background-color: #F57E2A;
+  font-size: 0.875rem;
+  color: #f7f8e0;
+  font-weight: 500;
+  line-height: 18px;
+}
+.wrapper .buttons .datebtn {
+  width: 137px;
+  height: 32px;
+  padding: 8px 16px 8px 16px;
+  gap: 4px;
+  border-radius: 20px;
+  border: 1px solid #E1E4E8;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  text-align: left;
+  background: none;
+  color: #313131;
+}
+.wrapper .buttons .to p {
+  color: #313131;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 18px;
+  text-align: left;
+  margin-top: 10px;
+}
+
+.wrapper {
+  width: 100%;
+  padding: 10px 20px;
+}
+.wrapper table {
+  width: 100%;
+  text-align: center;
+  gap: 0px;
+  border-radius: 20px;
+  box-shadow: 0px 1px 16px 0px rgba(0, 0, 0, 0.0784313725);
+  color: #41434a;
+}
+.wrapper table .icon {
+  border-radius: 31%;
+  background: #fff5eb;
+  width: 26px;
+  height: 26px;
+}
+.wrapper table .icon img {
+  padding: 20px;
+}
+.wrapper table th {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+  text-align: left;
+  padding: 20px;
+  border-bottom: 1px solid black;
+}
+.wrapper table td {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+  text-align: left;
+  padding: 20px;
+}
+.wrapper table td .save {
+  width: 60px;
+  padding: 8px;
+  border: 0;
+  border-radius: 6px;
+  background-color: pink;
+  font-weight: 500;
+  font-size: 16px;
+}
+.wrapper table td .cancel {
+  width: 65px;
+  padding: 8px;
+  border: 0;
+  border-radius: 6px;
+  background-color: pink;
+  font-weight: 500;
+  font-size: 16px;
+}
+.wrapper table td .edit {
+  font-size: 30px;
+  padding: 5px;
+  color: black;
+}
+.wrapper table td .del {
+  font-size: 30px;
+  padding: 5px;
+  color: rgb(236, 16, 16);
+}/*# sourceMappingURL=rol.module.css.map */

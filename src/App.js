@@ -8,6 +8,7 @@ import Register from "./pages/RegisterPage";
 import NoPage from "./pages/nopage";
 import MerchantCard from "./pages/MerchantCard";
 
+import Rol from './pages/ManageRol/Index';
 function App() {
   return (
     <BrowserRouter>
@@ -18,7 +19,12 @@ function App() {
       <Route path="/" element={<AdminLayout />}>
         <Route index element={<Home />} />
         <Route path="contact" element={<Contact />} />
+    
+        <Route path="ManageRol" element={<Rol />} />
+        
+        <Route path="/signup" element={<Register />} />
         <Route path="merchantCard" element={<MerchantCard />} />
+      
         <Route path="*" element={<NoPage />} />
       </Route>
     </Routes>

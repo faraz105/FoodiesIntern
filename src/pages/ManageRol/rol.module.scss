@@ -1,0 +1,147 @@
+@import "../../assets/styles/partials/allPartialFile";
+
+.mainrole {
+    width: 100%;
+    padding: 0px 20px;
+    @include alignCenter(center, space-between, 15px);
+
+    .mainrolecontainer {
+        @include alignCenter(center, " ", 15px);
+
+        .role {
+            h3 {
+                @include fontStyle($font_24, $primary_grey_900, $font_weight_500);
+                line-height: 0px;
+            }
+
+            p {
+                @include fontStyle($font_16, $primary_grey_400, $font_weight_400);
+                line-height: 20px;
+                margin-top: 5px;
+            }
+        }
+
+        .rolesearch {
+            position: relative;
+
+            .input {
+                @include widthHeight(150px, 35px);
+                padding-left: 25px;
+                border-radius: 20px;
+                border: 1px solid #CDCDCD;
+                &:focus {
+                    border: 1px solid $primary_orange;
+                    outline: none;
+                }
+            }
+
+            .icon {
+                position: absolute;
+                top: 11px;
+                left: 9px;
+            }
+        }
+    }
+
+    .rolebuttons {
+        @include alignCenter("", "", $font_20);
+
+        .rolebtn {
+            @include widthHeight(137px, 32px);
+            padding: 8px 16px;
+            @include alignCenter(center, "", 2px);
+            border-radius: 20px;
+            border: 0;
+            background-color: $primary_orange;
+            @include fontStyle($font_14, $primary_pink_light, $font_weight_500);
+            line-height: 18px;
+        }
+
+        .datebtn {
+            @include widthHeight(137px, 32px);
+            padding: 8px 16px;
+            gap: 4px;
+            display: flex;
+            border-radius: 20px;
+            border: 1px solid #E1E4E8;
+            @include fontStyle($font_12, "", $font_weight_400);
+            line-height: 18px;
+            text-align: left;
+            background: none;
+            color: #313131;
+        }
+
+        .to {
+            p {
+                color: #313131;
+                @include fontStyle($font_14, "", $font_weight_400);
+                line-height: 18px;
+                text-align: left;
+                margin-top: 10px;
+            }
+        }
+    }
+}
+
+.wrapper {
+    width: 100%;
+    padding: 10px 20px;
+
+    table {
+        width: 100%;
+        text-align: center;
+        gap: 0px;
+        border-radius: 20px;
+        box-shadow: 0px 1px 16px 0px #00000014;
+        color: $primary_grey_700;
+        border-collapse: collapse; // Ensure no gaps between borders
+
+        th {
+            @include fontStyle($font_14, "", $font_weight_500);
+            line-height: 16px;
+            text-align: left;
+            padding: 20px;
+            border-bottom: 1px solid $primary_grey_700; // Apply border
+            box-sizing: border-box; // Include padding and border in element's total width and height
+        }
+
+        td {
+            @include fontStyle($font_14, "", $font_weight_500);
+            line-height: 16px;
+            text-align: left;
+            padding: 20px;
+            box-sizing: border-box; // Include padding and border in element's total width and height
+.icon{
+    background-color: pink;
+    border-radius: 5px;
+}
+            .save {
+                width: 60px;
+                padding: 8px;
+                border: 0;
+                border-radius: 6px;
+                background-color: $primary_orange_light;
+                @include fontStyle($font_16, "", $font_weight_500);
+            }
+
+            .cancel {
+                width: 65px;
+                padding: 8px;
+                border: 0;
+                border-radius: 6px;
+                background-color: $primary_orange_light;
+                @include fontStyle($font_16, "", $font_weight_500);
+            }
+
+            .edit {
+                @include fontStyle($font_32, $primary_black, "");
+                padding: 5px;
+            }
+
+            .del {
+                @include fontStyle($font_32, $primary_red, "");
+                padding: 5px;
+            }
+        }
+    }
+}

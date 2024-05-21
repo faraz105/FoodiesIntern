@@ -1,0 +1,98 @@
+@import "../../assets//styles/partials/allPartialFile";
+
+.maincustomize {
+    display: flex;
+    padding: 22px 30px;
+
+    .customizenavlinks {
+        width: 15%;
+        border-right: 1px solid #a9b2b6;
+
+        ul {
+            list-style: none;
+            padding: 0;
+
+            li {
+                margin-bottom: 20px;
+                @include fontStyle($font_16 , $primary_grey_dark , $font_weight_400);
+                line-height: 20px;
+                text-align: left;
+
+                a {
+                    text-decoration: none;
+                    color: black
+                }
+            }
+        }
+    }
+
+    .customize {
+        width: 80%;
+        padding: 0px 20px;
+
+        .customizeselect {
+            text-align: end;
+            color: #313131;
+            @include fontStyle($font_14, "", $font_weight_400);
+            @include alignCenter(center , end , 10px);
+            line-height: 16px;
+        }
+
+        .mainPermission {
+            border: 1px solid #1b1d1f;
+            padding: 0px 10px;
+
+            .permisioncontainer {
+                @include alignCenter(center , space-between , "");
+                @include alignCenter(center , space-between , "");
+                justify-content: space-between;
+                border-bottom: 1px solid #abc7c7;
+            }
+
+            .permisionall {
+                position: relative;
+
+                .input {
+                    @include widthHeight(150px, 35px);
+                    padding-left: 25px;
+                    border-radius: 20px;
+                    border: 1px solid #CDCDCD;
+
+                    &:focus {
+                        border: 1px solid $primary_orange;
+                        outline: none;
+                    }
+                }
+
+                .Icon {
+                    position: absolute;
+                    top: 11px;
+                    left: 9px;
+                }
+            }
+
+            .permisionDash {
+                @include alignCenter(center ,"" , "");
+            }
+        }
+    }
+}
+
+.btn {
+    text-align: center;
+    padding: 10px 20px;
+
+    .btns {
+        @include widthHeight(350px, 45px);
+        gap: 0px;
+        border-radius: 48px;
+        opacity: 0px;
+        box-shadow: 0px 4px 5px 0px #FFFFFF73 inset;
+        background-color: $primary_orange;
+        border: 0;
+        box-shadow: 0px 6px 10px 0px #F57E2ACC;
+        @include fontStyle($font_16 , $primary_white , $font_weight_400);
+        line-height: 19px;
+        text-align: center;
+    }
+}
