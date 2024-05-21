@@ -19,3 +19,12 @@
   display: flex;
   flex-wrap: wrap;
 }
+@mixin column() {
+  display: flex;
+  flex-direction: column;
+}
+@mixin dropdownBorder() {
+  border: 1px solid #DFDFDF;
+  border-radius: 14px;
+}
+

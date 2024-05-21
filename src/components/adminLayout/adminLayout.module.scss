@@ -1,12 +1,14 @@
-.mainSection{
+@import "../../assets/styles/partials/allPartialFile";
+.mainLayoutSection{
     position: relative;
     .mainHeader{
-        background-color: #efefef;
-        padding: 12px;
-        margin-bottom: 25px;
+        background-color: $primary_white;
+        padding: 10px 30px 5px;
+        margin-bottom: 20px;
         position: sticky;
         top: 0;
         z-index: 99;
+        border-bottom: 1px solid $primary_grey_border;
     }
    
     .mainSidebarContent{
@@ -14,22 +16,16 @@
         
         .mainSidebar{
             width: 240px;
-            background-color: rgb(27, 27, 27);
-            color: white;
+            border-radius: 0 26px 26px 0;
+            box-shadow: 0 0 6px 0 #0000001C;
+            overflow: hidden;
             padding: 0;
-            overflow-y: auto;
-            overflow: visible;
-            overflow: visible;
             z-index: 9;
             position: sticky;
-            top: 80px;
-            height: 86vh;
-            >.MuiDrawer-root{
-                height: 100%;
-                > .MuiPaper-root {
-                    position: relative;
-                }
-            }
+            top: 88px;
+            height: calc(100vh - 89px);
+            padding-top: 30px;
+            
             .arrow {
                 width: 30px;
                 background-color: #f32020;

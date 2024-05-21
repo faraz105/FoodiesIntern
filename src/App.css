@@ -8,3 +8,6 @@ body{
 img{
   max-width: 100%;
 }
+.css-e47596-MuiDateRangeCalendar-root > div:first-child {
+  display: none;
+}

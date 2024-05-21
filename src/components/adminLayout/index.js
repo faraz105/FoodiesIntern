@@ -2,7 +2,7 @@ import React , {useState, useEffect} from "react";
 import { Outlet } from "react-router-dom";
 import Header from "../header";
 import Sidebar from "../sidebar";
-import "./adminLayout.scss";
+import classes from "./adminLayout.module.scss";
 
 const AdminLayout = () => {
   const [count , setCount]= useState(true)
@@ -11,16 +11,16 @@ const AdminLayout = () => {
   }
   return (
     <>
-      <div className= "mainSection">
-          <div className="mainHeader">  
+      <div className={classes.mainLayoutSection}>
+          <div className={classes.mainHeader}>  
             <Header />
           </div>
-        <div className={`mainSidebarContent ${!count ? "remMar" : ""}`}>
-            <div className={ count ? "mainSidebar" : "mainSidebar slideOff"} >
-              {/* <div className="arrow" onClick={handleArrow}>→</div> */}
+        <div className={classes.mainSidebarContent}>
+            <div className={classes.mainSidebar} >
+              {/* <div className={classes.arrow" onClick={handleArrow}>→</div> */}
               <Sidebar count={count} />
             </div>
-            <div className="mainContent">
+            <div className={classes.mainContent}>
               <Outlet />
             </div>
         </div>
