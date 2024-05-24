@@ -3,6 +3,9 @@ import axios from "../utilities/index";
 export const userLogin = (data) => {
   return axios.post("/login", data);
 };
+export const userResetPassword = (data) => {
+  return axios.post("/resetpassword", data);
+};
 export const userSignUp = (data) => {
   return axios.post("/createadmin", data);
 };
