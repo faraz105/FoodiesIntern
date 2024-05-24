@@ -1,0 +1,117 @@
+@import "../../assets/styles/partials/allPartialFile";
+.tableUpperSection {
+    display: flex; 
+    align-items: center;
+    justify-content: space-between;
+    .left_section{
+        display: flex;
+         align-items: center;
+          gap: 5px;
+    }
+    .user{
+        font-size: 24px;
+         font-weight: 400; 
+    }
+    .totalUsers{
+        font-size: 16px;
+        font-weight: 300;
+    }
+    .searchBox{
+        position: relative;
+    }
+    .searchBox_styling{
+            margin-left: 20px;
+            border-radius: 60px;
+            height: 35px;
+            padding-left: 35px;
+            border: 0.5px solid var(--light-gray, #CDCDCD)
+    }
+    .searchIcon{
+            position: absolute;
+            top: 60%;
+            transform: translateY(-50%);
+            left: 30px;
+    }
+    .btnAddUser{
+            padding: 8px 16px;
+            border-radius: 60px;
+            background: #F57E2A;
+            color: white;
+            border: none;
+    }
+    .btnAddUser:hover {
+        padding: 8px 16px;
+        border-radius: 60px;
+        background: #F57E2A;
+        color: white;
+        border: none;
+}
+ 
+}
+.parentContainer{
+    .tableContainer{
+        border-radius: 31px;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    }
+    .paginationStyling{
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+    .usernameAndAvatarStyling{
+            display:flex;
+            gap: 5px;
+            align-items: center;
+    }
+    .tableActionStyling{
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 8px;
+            span{
+                color: #F57E2A;
+                cursor: pointer;
+                background: rgb(253, 229, 212);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 5px;
+                border-radius: 5px;
+            }
+            .updatePasswordIcon{
+                color: #313131;
+                cursor: pointer;
+                background:rgb(228, 228, 228);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 5px;
+                border-radius: 5px;
+            }
+            .deleteIcon{
+                color: #E00000;
+                cursor: pointer;
+                background: rgb(249, 204, 204);
+                display: flex;
+                align-Items: center;
+                justify-content: center;
+                padding: 5px;
+                border-radius: 5px;
+            }
+    }
+}
+
+.paginationStyle {
+    border-radius: 10px;    
+    font-size: 10px;
+    & .Mui-selected {
+        background: #F57E2A !important;
+        color: rgb(8, 3, 3);
+    }
+            &:hover {
+        // background-color: #F57E2A;
+        color: white;
+    }
+}
+
+

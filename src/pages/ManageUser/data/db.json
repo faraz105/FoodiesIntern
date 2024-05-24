@@ -1,0 +1,103 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "Leanne Graham",
+      "date": "06-11-2023",
+      "email": "Sincere@april.biz",
+      "roles": "General Manager",
+      "img_path": "person_icon.png"
+    },
+    {
+      "id": 2,
+      "username": "John Deep",
+      "date": "06-11-2023",
+      "email": "Blog@april.huz",
+      "roles": "Order Taker"
+    },
+    {
+      "id": 3,
+      "username": "Jhon Sin",
+      "date": "06-11-2023",
+      "email": "Sight@june.zic",
+      "roles": "Sales Manager"
+    },
+    {
+      "id": 4,
+      "username": "Henry Sin",
+      "date": "06-11-2023",
+      "email": "Sight@june.zic",
+      "roles": "Sales Manager"
+    },
+    {
+      "id": 5,
+      "username": "Shine Henry",
+      "date": "06-11-2023",
+      "email": "Sight@june.zic",
+      "roles": "Sales Manager"
+    },
+    {
+      "id": 6,
+      "username": "Shine Sin",
+      "date": "06-11-2023",
+      "email": "Sight@june.zic",
+      "roles": "Sales Manager"
+    },
+    {
+      "id": 7,
+      "username": "Shine Sin",
+      "date": "06-11-2023",
+      "email": "Sight@june.zic",
+      "roles": "Sales Manager"
+    },
+    {
+      "id": 8,
+      "username": "Shine Sin",
+      "date": "06-11-2023",
+      "email": "Sight@june.zic",
+      "roles": "Sales Manager"
+    },
+    {
+      "id": 9,
+      "username": "Shine Sin",
+      "date": "06-11-2023",
+      "email": "Sight@june.zic",
+      "roles": "Sales Manager"
+    },
+    {
+      "id": 10,
+      "username": "Shine Sin",
+      "date": "06-11-2023",
+      "email": "Sight@june.zic",
+      "roles": "Sales Manager"
+    },
+    {
+      "id": 11,
+      "username": "Shine Sin",
+      "date": "06-11-2023",
+      "email": "Sight@june.zic",
+      "roles": "Sales Manager"
+    },
+    {
+      "id": 12,
+      "username": "Shine Sin",
+      "date": "06-11-2023",
+      "email": "Sight@june.zic",
+      "roles": "Sales Manager"
+    },
+    {
+      "id": 13,
+      "username": "Shine Sin",
+      "date": "06-11-2023",
+      "email": "Sight@june.zic",
+      "roles": "Sales Manager"
+    },
+    {
+      "id": 14,
+      "username": "Shine Sin",
+      "date": "06-11-2023",
+      "email": "Sight@june.zic",
+      "roles": "Sales Manager"
+    }
+  ]
+}
