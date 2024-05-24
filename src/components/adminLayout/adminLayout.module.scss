@@ -16,15 +16,14 @@
         
         .mainSidebar{
             width: 240px;
-            border-radius: 0 26px 0 0;
+            border-radius: 0 26px 26px 0;
             box-shadow: 0 0 6px 0 #0000001C;
             overflow: hidden;
-            color: white;
             padding: 0;
             z-index: 9;
             position: sticky;
             top: 88px;
-            height: 86vh;
+            height: calc(100vh - 89px);
             padding-top: 30px;
             
             .arrow {

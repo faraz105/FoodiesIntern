@@ -1,0 +1,72 @@
+@import "../../assets/styles/partials/allPartialFile";
+.sideBarContainer {
+  display: flex;
+  flex-direction: column;
+  .navLinkSection {
+    height: calc(100vh - 235px);
+    overflow-y: auto;
+    ::-webkit-scrollbar {
+      width: 3px;
+      height: 20px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+      border-radius: 15px;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      background: transparent;
+      border-radius: 10px;
+    }
+    &:hover {
+      ::-webkit-scrollbar {
+        width: 3px;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: rgba(245, 126, 42, 0.15);
+      }
+    }
+  }
+  .mainLogout {
+    padding: 0 15px;
+    .logoutContent {
+      display: flex;
+      gap: 20px;
+      padding: 13px 0;
+      border-top: 1px solid $primary_grey_border;
+      .logoutProfileImg {
+        padding: 2px;
+      }
+      .logoutText {
+        padding: 2px;
+        flex: 1;
+        h4 {
+          font-size: 16px;
+          font-weight: 700;
+          margin: 0;
+          color: $primary_black;
+        }
+        p {
+          font-size: 14px;
+          font-weight: 400;
+          margin: 0;
+          color: $primary_grey;
+          margin-bottom: 10px;
+        }
+        button {
+          background-color: $primary_orange;
+          border: 0;
+          color: $primary_white;
+          padding: 10px 25px;
+          border-radius: 30px;
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}

@@ -4,36 +4,42 @@ const MenuData = [
     link: "/dashboard"
   },
   {
-    title: "Dropdown 1",
+    title: "Orders",
     dropdown: true,
     items: [
-      { title: "Option 1", link: "/option1" },
-      { title: "Option 2", link: "/option2" }
+      { title: "Live Orders", link: "/orders/liveOrders" },
+      { title: "Orders History", link: "/orders/ordersHistory" }
     ]
+  },
+  {
+    title: "Menu Managment",
+    link: "/menuManagment"
   },
   {
     title: "Store",
     dropdown: true,
     items: [
-      { title: "store 1", link: "/sdas" },
-      { title: "contact", link: "/contact" }
+      { title: "Overview", link: "/store/overview" },
+      { title: "Manage stores", link: "/store/manageStores" }
     ]
   },
   {
-    title: "Dropdown 2",
+    title: "Customers",
     dropdown: true,
     items: [
-      { title: "Option 3", link: "/option3" },
-      { title: "Option 4", link: "/option4" }
+      { title: "Manage Customer", link: "/customers/manageCustomer" },
+      { title: "Manage User", link: "/customers/manageUser" },
+      { title: "Manage Roles", link: "/customers/manageRoles" },
+      { title: "Customer Reviews", link: "/customers/customerReviews" }
     ]
   },
   {
-    title: "Item 1",
-    link: "/item1"
+    title: "Reports",
+    link: "/reports"
   },
   {
-    title: "Item 2",
-    link: "/item2"
+    title: "Settings",
+    link: "/settings"
   }
 ];
 

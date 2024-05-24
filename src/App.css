@@ -1,10 +1,40 @@
+@font-face {
+  font-family: 'MADE Okine Sans';
+  src: url('./assets/font/MADEOkineSansPERSONALUSE-Light.otf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'MADE Okine Sans';
+  src: url('./assets/font/MADEOkineSansPERSONALUSE-Regular.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'MADE Okine Sans';
+  src: url('./assets/font/MADEOkineSansPERSONALUSE-Medium.otf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'MADE Okine Sans';
+  src: url('./assets/font/MADEOkineSansPERSONALUSE-Bold.otf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
 body{
   margin: 0;
   padding: 0;
+  font-family: 'MADE Okine Sans', sans-serif !important;
+  min-width: 320px;
 }
 *{
   box-sizing: border-box;
 }
 img{
   max-width: 100%;
+}
+.css-e47596-MuiDateRangeCalendar-root > div:first-child {
+  display: none;
 }

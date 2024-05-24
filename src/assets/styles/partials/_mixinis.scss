@@ -27,4 +27,9 @@
   border: 1px solid #DFDFDF;
   border-radius: 14px;
 }
+@mixin mainHeading() {
+  font-family: "Urbanist", sans-serif !important;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
 
