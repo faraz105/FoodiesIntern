@@ -12,9 +12,8 @@ const style = {
     boxShadow: 24,
     textAlign: 'center',
     zIndex: 1
-  //   p: 4,
   };
-const DeleteSuccessfully = ({openSuccessModal, handleDeleteClose} ) => {
+const DeleteSuccessfully = ({deleteText, image} ) => {
 
   return (
     <div>
@@ -22,7 +21,7 @@ const DeleteSuccessfully = ({openSuccessModal, handleDeleteClose} ) => {
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
         open={openSuccessModal}
-        onClose={handleDeleteClose}
+        onClose={handleSuccessClose}
         closeAfterTransition
         slots={{ backdrop: Backdrop }}
         slotProps={{
@@ -42,9 +41,11 @@ const DeleteSuccessfully = ({openSuccessModal, handleDeleteClose} ) => {
                   padding: "28px"               
                 }}
               >
-                <Typography onClick={handleDeleteClose} style={{color: 'white', background: 'rgb(245, 126, 42)', borderRadius:'50%', width: 30, height: 30, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>X</Typography>
+                <Typography onClick={handleSuccessClose} style={{color: 'white', background: 'rgb(245, 126, 42)', borderRadius:'50%', width: 30, height: 30, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>X</Typography>
            </div>
-           <img src="/Images/DeleteSuccessfullyImage.gif" alt="" width='150px' />
+           <img src={image} alt="" width='150px' />
+           <Typography variant='h4' style={{fontSize: '28px', fontWeight: 400, textAlign: 'center'}}>{deleteText}</Typography>
+
           </Box>
         </Fade>
       </Modal>

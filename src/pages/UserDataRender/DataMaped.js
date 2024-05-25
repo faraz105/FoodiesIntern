@@ -27,14 +27,12 @@ export default function BasicTable({ users , mode}) {
   const [searchText, setSearchText] = useState("");
   const [noRecords, setNoRecords] = useState(false);
   const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
   const [openModal, setOpenModal] = React.useState(false);
 
   const [openEditModal, setOpenEditModal] = React.useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleOpenModal = () => setOpenModal(true);
- 
-  // const handleClick = () => setOpenEditModal(true);
-  const handleClose = () => setOpen(false);
+  const handleOpenModal = () => setOpenModal(true)
   const handleCloseModal = () => setOpenModal(false);
   //////////Lock Modal/////////////////////
   const [openLockModal, setOpenLockModal] = React.useState(false);
@@ -61,6 +59,7 @@ export default function BasicTable({ users , mode}) {
       }
     }, delay);
   };
+
 
   return (
     <div className="parentContainer">
@@ -142,7 +141,7 @@ export default function BasicTable({ users , mode}) {
                     </span>
                     <AddNewUserComponents open={openModal} handleClose={handleCloseModal}  textButton={"save changes"}/>
                     <PasswordChangeComponent openLockModal={openLockModal} handleLockClose={handleLockClose} textButton={"Save Changes"}/>
-                   < Delete  openDeleteModal={openDeleteModal} handleDeleteClose={handleDeleteClose}  textButton={"save changes"} />
+                   < Delete  openDeleteModal={openDeleteModal} handleDeleteClose={handleDeleteClose}  textButton={"Yes Delete"} />
                     <span className="deleteIcon">
                       <img src="Images/delete-img.png" alt="" onClick={handleDeleteOpen}/>
                     </span>

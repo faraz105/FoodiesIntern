@@ -1,18 +1,11 @@
 import React from 'react'
-
-// import Backdrop from '@mui/material/Backdrop';
-// import Box from '@mui/material/Box';
-// import Modal from '@mui/material/Modal';
-// import Fade from '@mui/material/Fade';
-// import Button from '@mui/material/Button';
-// import Typography from '@mui/material/Typography';
 import Backdrop from '@mui/material/Backdrop';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import Fade from '@mui/material/Fade';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-
+import CustomBackdrop from '../CustomBackdrop/CustomBackdrop';
 const style = {
   position: 'absolute',
   top: '50%',
@@ -20,15 +13,12 @@ const style = {
   transform: 'translate(-50%, -50%)',
   width: 995,
   bgcolor: 'background.paper',
-  border: '2px solid #000',
-  boxShadow: 24,
+  // border: '2px solid #000',
+  // boxShadow: 24,
   borderRadius: "40px",
 
 
 };
-
-
-
 
 const PasswordChangeComponent = ({openLockModal, handleLockClose, textButton}) => {
   return (
@@ -38,7 +28,7 @@ const PasswordChangeComponent = ({openLockModal, handleLockClose, textButton}) =
           open={openLockModal}
           onClose={handleLockClose}
           closeAfterTransition
-          slots={{ backdrop: Backdrop }}
+          slots={{ backdrop: CustomBackdrop }}
           slotProps={{
             backdrop: {
               timeout: 500,
@@ -91,16 +81,12 @@ const PasswordChangeComponent = ({openLockModal, handleLockClose, textButton}) =
                   padding: '0px 38px'
                 }} 
               >
-              
-             
-                <div className="innerinput" style={{position: 'relative'}} >
+                  <div className="innerinput" style={{position: 'relative'}} >
                   <label htmlFor="" style={{fontSize: 20, fontWeight: 400, lineHeight: '25.3px'}}>Enter Password</label>
                   <br /><br />
                   <input
                     type="password"
                     name="password"
-                    // value={values.password}
-                    // onChange={handleChange}
                     style={{
                       width: "100%", 
                       height: 54, 
@@ -123,9 +109,6 @@ const PasswordChangeComponent = ({openLockModal, handleLockClose, textButton}) =
                   <br /><br />
                   <input
                     type="password"
-                    // name="confirmPassword"
-                    // value={values.confirmPassword}
-                    // onChange={handleChange}
                     style={{ width: "100%", height: 54, borderRadius: 48, marginBottom: '10px', border: "1px solid var(--light-gray, #CDCDCD)",  paddingLeft: '20px', paddingRight: '50px', outline: 'none'  }}
                     onFocus={(e) => { e.target.style.borderColor = '#F57E2A'; }}
                     onBlur={(e) => { e.target.style.borderColor = 'var(--light-gray, #CDCDCD)'; 
@@ -146,62 +129,8 @@ const PasswordChangeComponent = ({openLockModal, handleLockClose, textButton}) =
         
                 }}
               >
-                {/* <div  className="innerinput">
-                  <label htmlFor="" style={{fontSize: 20, fontWeight: 400, lineHeight: '25.3px'}} >Role</label>
-                  <br /><br />
-                  <div>
-                  <select 
-                  style={{ width: "100%",
-                   height: 54, 
-                   borderRadius: 48,  
-                   marginBottom: '10px', 
-                   border: "1px solid var(--light-gray, #CDCDCD)" ,  
-                   padding: '0px 20px', 
-                   outline: 'none',
-                   zIndex: 1,
-                   backgroundColor: 'transparent',
-                   appearance: 'none', 
-                   cursor: 'pointer', 
-                   transition: 'border-color 0.3s ease', 
-
-                   }}
-                   onFocus={(e) => { e.target.style.borderColor = '#F57E2A'; }}
-                   onBlur={(e) => { e.target.style.borderColor = 'var(--light-gray, #CDCDCD)'; }}
-                    >
-                    <option value="1">General Manager</option> 
-                    <option value="2">Sales Person</option>
-                    <option value="3">Order Taker</option>
-                  </select>
-                  </div> */}
-                  
                 </div>
-                {/* <div  className="innerinput">
-                  <label htmlFor="" style={{fontSize: 20, fontWeight: 400, lineHeight: '25.3px'}}>Select Store</label>
-                  <br /><br />
-                  <select 
-                  style={{ 
-                    width: "100%", 
-                    height: 54,
-                     borderRadius: 48,
-                      marginBottom: '10px', 
-                      padding: '0px 10px', 
-                      border: "1px solid var(--light-gray, #CDCDCD)",
-                       outline: 'none',
-                       zIndex: 1,
-                       backgroundColor: 'transparent',
-                       appearance: 'none', 
-                       cursor: 'pointer', 
-                       transition: 'border-color 0.3s ease', 
-                       }}
-                       onFocus={(e) => { e.target.style.borderColor = '#F57E2A'; }}
-                       onBlur={(e) => { e.target.style.borderColor = 'var(--light-gray, #CDCDCD)'; }}
-                       >
-                    <option value="1">General Manager</option>
-                    <option value="2">Sales Person</option>
-                    <option value="3">Order Taker</option>
-                  </select>
-                </div> */}
-              {/* </div> */}
+          
               <div style={{ textAlign: "center" }}>
                 <Button
                 type="submit"

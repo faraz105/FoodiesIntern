@@ -5,15 +5,8 @@ import Modal from "@mui/material/Modal";
 import Fade from "@mui/material/Fade";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import { TextField } from "@mui/material";
-import { useFormik } from "formik";
 import Paper from "@mui/material";
-  const initialValues = {
-    name: "",
-    email: "",
-    password: "",
-    confirmPassword: "",
-  };
+import CustomBackdrop from "../CustomBackdrop/CustomBackdrop";
 const style = {
   position: "absolute",
   top: "50%",
@@ -21,18 +14,14 @@ const style = {
   transform: "translate(-50%, -50%)",
   width: 995,
   bgcolor: "background.paper",
-  border: "2px solid #000",
+  // border: "2px solid #000",
   borderRadius: "40px",
-  boxShadow: 24,
+  // boxShadow: 24,
+  
 };
 
 const Components = ({open,handleClose, textButton}) => {
-  const { values, handleBlur, handleChange, handleSubmit } = useFormik({
-    initialValues: initialValues,
-    onSubmit: (values) => {
-      console.log(values);
-    },
-  });
+
   return (
         <Modal
           aria-labelledby="transition-modal-title"
@@ -40,14 +29,14 @@ const Components = ({open,handleClose, textButton}) => {
           open={open}
           onClose={handleClose}
           closeAfterTransition
-          slots={{ backdrop: Backdrop }}
-          slotProps={{
-            backdrop: {
-              timeout: 500,
-            },
-          }}
+          slots={{ backdrop: CustomBackdrop }}
+         slotProps={{
+          backdrop: {
+            timeout: 500,
+          },
+         }}
         >
-        <form onSubmit={handleSubmit}>
+        <form>
           <Fade in={open}>
             <Box className="parent" sx={style}>
               <div
@@ -99,8 +88,7 @@ const Components = ({open,handleClose, textButton}) => {
   <input
     type="text"
     name="name"
-    value={values.name}
-    onChange={handleChange}
+
     style={{
       width: "100%",
       height: 54,
@@ -121,8 +109,7 @@ const Components = ({open,handleClose, textButton}) => {
                   <input
                     type="email"
                     name="email"
-                    value={values.email}
-                    onChange={handleChange}
+
                     style={{ 
                     width: "100%", 
                     height: 54, 
@@ -146,8 +133,7 @@ const Components = ({open,handleClose, textButton}) => {
                   <input
                     type="password"
                     name="password"
-                    value={values.password}
-                    onChange={handleChange}
+        
                     style={{
                       width: "100%", 
                       height: 54, 
@@ -171,8 +157,6 @@ const Components = ({open,handleClose, textButton}) => {
                   <input
                     type="password"
                     name="confirmPassword"
-                    value={values.confirmPassword}
-                    onChange={handleChange}
                     style={{ width: "100%", height: 54, borderRadius: 48, marginBottom: '10px', border: "1px solid var(--light-gray, #CDCDCD)",  paddingLeft: '20px', paddingRight: '50px', outline: 'none'  }}
                     onFocus={(e) => { e.target.style.borderColor = '#F57E2A'; }}
                     onBlur={(e) => { e.target.style.borderColor = 'var(--light-gray, #CDCDCD)'; 
@@ -271,5 +255,4 @@ const Components = ({open,handleClose, textButton}) => {
         </Modal>
   );
 };
-
 export default Components;
