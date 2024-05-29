@@ -1,0 +1,70 @@
+@import "../../assets/styles/partials/allPartialFile";
+
+.customDemoContainer {
+  display: flex;
+  gap: 10px;
+  margin-top: 5px;
+  > .MuiStack-root {
+    overflow: hidden;
+    
+    > .MuiFormControl-root {
+      min-width: 0px;
+   
+      > .MuiFormLabel-root {
+        display: none !important;
+      }
+      > .MuiInputBase-root {
+        > .MuiInputBase-input {
+          padding: 3px 3px !important;
+          order: 1 !important;
+          width: 80px !important;
+          height: 20px;
+          margin-left: 10px;
+          margin-right: 10px;
+          font-size: 12px !important;
+          font-weight: bold;
+         
+        }
+      }
+
+      fieldset {
+        border-radius: 20px;
+        legend {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+// .table_wrapperContainer__+WCkq{
+//   > .MuiTableBody-root{
+//     > .MuiTableRow-root{
+
+//       > .MuiTableCell-root{
+//         border: none !important;
+//       }
+//     }
+//   }
+// }
+
+// .table_wrapperContainer__+WCkq{
+//  > .MuiTableCell-root{
+//   border-bottom: none !important;
+// }
+// }
+
+.customPagination {
+  .Mui-selected {
+    background-color: $primary_orange !important;
+    color: $primary_white;
+  }
+  .MuiButtonBase-root {
+    margin-left: 5px;
+    margin-right: 5px;
+    border-radius: 10px;
+  }
+}
+
+
+

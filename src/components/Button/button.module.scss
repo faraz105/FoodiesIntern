@@ -1,0 +1,23 @@
+@import "../../assets/styles/partials/allPartialFile";
+.button {
+  background-color: $primary_orange;
+  color: $primary_white;
+  border-radius: 26px;
+  padding: 10px 20px;
+  border: none;
+  width: 350px;
+  box-shadow: 5px 5px 15px rgba(245, 126, 42, 0.3);
+}
+
+@media (max-width: 1024px) {
+  .button {
+  width: 250px;
+  }
+}
+
+@media (max-width: 576px) {
+  .button {
+  width: 150px;
+  }
+}
+

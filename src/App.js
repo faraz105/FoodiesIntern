@@ -7,6 +7,7 @@ import Login from './pages/LoginPage';
 import Register from "./pages/RegisterPage";
 import NoPage from "./pages/nopage";
 import MerchantCard from "./pages/MerchantCard";
+import ManageCustomer from "./pages/ManageCustomer";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route index element={<Home />} />
         <Route path="contact" element={<Contact />} />
         <Route path="merchantCard" element={<MerchantCard />} />
+        <Route path="/customers/manageCustomer" element={<ManageCustomer />} />
         <Route path="*" element={<NoPage />} />
       </Route>
     </Routes>
