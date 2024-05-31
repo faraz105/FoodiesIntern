@@ -31,7 +31,7 @@ const Header = () => {
     dispatch({
       type: LOGOUT,
     });
-    navigate("/login");
+    navigate("/signin");
     localStorage.removeItem("userData");
   };
 

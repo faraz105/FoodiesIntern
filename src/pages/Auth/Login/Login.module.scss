@@ -53,9 +53,20 @@
         p {
           @include fontStyle($font_20, $primary_black, $font_weight_300);
           margin: 0 0 10px;
+          span {
+            color: $primary_orange;
+          }
           @include mediaQueryScreen(desktopXX) {
             font-size: 1vw;
             margin-bottom: 1vw;
+          }
+          @include mediaQueryScreen(desktop) {
+            font-size: $font_16;
+          }
+          @include mediaQueryScreen(phoneX) {
+            br{
+              display: none;
+            }
           }
         }
       }
@@ -98,7 +109,7 @@
           @include mediaQueryScreen(desktopXX) {
             height: 3vw;
             border-radius: 6vw;
-            padding: 1vw;
+            padding: 0.7vw 1vw;
             font-size: 1vw;
           }
           &::placeholder {
@@ -137,7 +148,6 @@
             }
           }
           a {
-            flex: 1;
             display: inline-block;
             text-decoration: none;
             text-align: right;
@@ -236,7 +246,7 @@
       display: none;
     }
     .bannerHeading{
-      position: absolute;
+      position: fixed;
       z-index: 9;
       width: 565px;
       right: 0;
@@ -247,7 +257,7 @@
       line-height: 66px;
       @include mediaQueryScreen(desktopX) {
         font-size: 4vw;
-        left: 0;
+        right: 9vw;
         width: auto;
       }
       @include mediaQueryScreen(desktopXX) {
