@@ -6,6 +6,7 @@ import Fade from "@mui/material/Fade";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import CustomBackdrop from "../CustomBackdrop/CustomBackdrop";
+// import { users } from "../ManageUser/data/db";
 const style = {
   position: "absolute",
   top: "50%",
@@ -14,10 +15,9 @@ const style = {
   width: 579,
   height: 444,
   bgcolor: "background.paper",
-  // border: "2px solid #000",
+  border: 'none',
   borderRadius: "50px",
-  // boxShadow: 24,
-  textAlign: "center",
+  textAlign: "center"
 };
 const Delete = ({ openDeleteModal, handleDeleteClose, textButton }) => {
   const [image, setImage] = useState("/Images/DeleteImage.gif");
@@ -33,10 +33,11 @@ const Delete = ({ openDeleteModal, handleDeleteClose, textButton }) => {
     }
   }, [openDeleteModal]);
 
-  const handleDeleteConfirm = () => {
+  const handleDeleteConfirm = (userId) => {
     setImage("/Images/DeleteSuccessfullyImage.gif");
     setdeleteText("Menu Deleted Successfully!");
     setIsDeleted(true);
+
   };
 
   return (
@@ -63,6 +64,7 @@ const Delete = ({ openDeleteModal, handleDeleteClose, textButton }) => {
                 alignItems: "center",
                 justifyContent: "flex-end",
                 padding: "28px",
+                border: 'none'
               }}
             >
               <Typography

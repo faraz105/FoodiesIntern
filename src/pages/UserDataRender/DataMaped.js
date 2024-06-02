@@ -8,7 +8,6 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import "./table_module.scss";
 import {
-  Avatar,
   Box,
   Button,
   TextField,
@@ -18,11 +17,12 @@ import {
 import AddBoxIcon from "@mui/icons-material/AddBox";
 import SearchIcon from "@mui/icons-material/Search";  
 import AddNewUserComponents from "../Components/AddNewUserComponents";
+import EditModal from '../EditModal/EditModal';
 import { Password } from "@mui/icons-material";
 import PasswordChangeComponent from "../LockChange/PasswordChangeComponent";
 import Delete from "../Delete/Delete";
-export default function BasicTable({ users , mode}) {
-  const [usersData, setUsersData] = useState(users);
+export default function BasicTable({ data ,setData }) {
+  // const [usersData, setUsersData] = useState(users);
   const [currentPage, setCurrentPage] = useState(1);
   const [searchText, setSearchText] = useState("");
   const [noRecords, setNoRecords] = useState(false);
@@ -32,8 +32,8 @@ export default function BasicTable({ users , mode}) {
   const [openModal, setOpenModal] = React.useState(false);
 
   const [openEditModal, setOpenEditModal] = React.useState(false);
-  const handleOpenModal = () => setOpenModal(true)
-  const handleCloseModal = () => setOpenModal(false);
+  const handleEditOpenModal = () => setOpenEditModal(true)
+  const handleEditCloseModal = () => setOpenEditModal(false);
   //////////Lock Modal/////////////////////
   const [openLockModal, setOpenLockModal] = React.useState(false);
   const handleLockOpenModal = () => setOpenLockModal(true);
@@ -43,19 +43,18 @@ export default function BasicTable({ users , mode}) {
   const [openDeleteModal, setOpenDeleteModal] = React.useState(false);
   const handleDeleteOpen = () => setOpenDeleteModal(true);
   const handleDeleteClose = () => setOpenDeleteModal(false);
-
   const handleSearch = (value) => {
     const delay = 500; 
     setTimeout(() => {
-      const filteredResults = users.filter((item) =>
+      const filteredResults = data.filter((item) =>
         item.username.toLowerCase().includes(value.toLowerCase())
       );
       if (filteredResults.length == 0 && value !== "") {
         setNoRecords(true);
-        setUsersData([]);
+        setData([]);
       } else {
         setNoRecords(false);
-        setUsersData(value === "" ? users : filteredResults);
+        setData(value === "" ? data : filteredResults);
       }
     }, delay);
   };
@@ -67,7 +66,7 @@ export default function BasicTable({ users , mode}) {
         <div className="left_section">
           <Box>
             <Typography className="user">User</Typography>
-            <Typography className="totalUsers">Total {usersData.length}</Typography>
+            <Typography className="totalUsers">Total {data.length}</Typography>
           </Box>
           <div className="searchBox">
             <input
@@ -113,7 +112,7 @@ export default function BasicTable({ users , mode}) {
             </TableRow>
           </TableHead>
           <TableBody>
-            {usersData?.slice((currentPage - 1) * 10, currentPage * 10)?.map((user) => (
+            {data?.slice((currentPage - 1) * 10, currentPage * 10)?.map((user) => (
                 <TableRow
                   key={user?.id}
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
@@ -125,7 +124,7 @@ export default function BasicTable({ users , mode}) {
                   <TableCell align="left">{user?.date}</TableCell>
                   <TableCell align="left" className="usernameAndAvatarStyling">
                     <span>
-                      <Avatar style={{ height: "30px", width: "30px" }} />
+                      <img src={user.userImage} alt="UserImage" />
                     </span>
                     <span style={{ padding: "" }}>{user?.username}</span>
                   </TableCell>
@@ -134,12 +133,13 @@ export default function BasicTable({ users , mode}) {
                   <TableCell align="left">{user?.roles}</TableCell>
                   <TableCell className="tableActionStyling">
                     <span>
-                      <img src="Images/edit-image-icon.png" onClick={handleOpenModal}/>
+                      <img src="Images/edit-image-icon.png" onClick={handleEditOpenModal}/>
                     </span>
                     <span className="updatePasswordIcon">
                       <img src="Images/delicon-img.png" alt="" onClick={handleLockOpenModal}/>
                     </span>
-                    <AddNewUserComponents open={openModal} handleClose={handleCloseModal}  textButton={"save changes"}/>
+                    <EditModal  openEditModal={openEditModal} handleEditCloseModal={handleEditCloseModal}/>
+                    {/* <AddNewUserComponents open={openModal} handleClose={handleCloseModal}  textButton={"save changes"}/> */}
                     <PasswordChangeComponent openLockModal={openLockModal} handleLockClose={handleLockClose} textButton={"Save Changes"}/>
                    < Delete  openDeleteModal={openDeleteModal} handleDeleteClose={handleDeleteClose}  textButton={"Yes Delete"} />
                     <span className="deleteIcon">
@@ -155,7 +155,7 @@ export default function BasicTable({ users , mode}) {
 
       <div className="paginationStyling">
         <Pagination
-          count={Math.ceil(usersData?.length / 10)}
+          count={Math.ceil(data?.length / 10)}
           onChange={(e, page) => setCurrentPage(page)}
           variant="outlined"
           shape="rounded"

@@ -7,32 +7,25 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Paper from "@mui/material";
 import CustomBackdrop from "../CustomBackdrop/CustomBackdrop";
-import module from "./Modal_module.scss";
-const Components = ({ open, handleClose }) => {
- function myFunction() {
-    var x = document.getElementById("myInput");
-    if(x.type === "password"){
-      x.type ="text";
+import EditModule from "./EditModal_module.scss";
+const Components = ({ openEditModal, handleEditCloseModal }) => {
+  function showPassword() {
+    var z = document.getElementById("inputPassword");
+    if(z.type === "password"){
+      z.type ="text";
     }else{
-      x.type = "password";
+      z.type = "password";
     }
 
   }
-  function confirmPasswordFunction(){
-    var y = document.getElementById("confirmInput");
-    if(y.type === "password"){
-      y.type ="text";
-    }else{
-      y.type = "password";
-    }
-  }
+
   return (
     <Modal
       className="add-new-model"
       aria-labelledby="transition-modal-title"
       aria-describedby="transition-modal-description"
-      open={open}
-      onClose={handleClose}
+      open={openEditModal}
+      onClose={handleEditCloseModal}
       closeAfterTransition
       slots={{ backdrop: CustomBackdrop }}
       slotProps={{
@@ -42,11 +35,11 @@ const Components = ({ open, handleClose }) => {
       }}
     >
       <form>
-        <Fade in={open}>
+        <Fade in={openEditModal}>
           <Box className="parent">
             <div className="header">
               <Typography className="modalLeftName">Add New User</Typography>
-              <Typography onClick={handleClose} className="closeButton">
+              <Typography onClick={handleEditCloseModal} className="closeButton">
                 X
               </Typography>
             </div>
@@ -111,7 +104,7 @@ const Components = ({ open, handleClose }) => {
                   type="password"
                   name="password"
                   className="textFieldStyling"
-                  id="myInput"
+                  id="inputPassword"
                   onFocus={(e) => {
                     e.target.style.borderColor = "#F57E2A";
                   }}
@@ -124,7 +117,7 @@ const Components = ({ open, handleClose }) => {
                   alt=""
                   width="25px"
                   className="eyeIconStyling"
-                  onClick={myFunction}
+                  onClick={showPassword}
                 />
               </div>
 
@@ -138,7 +131,6 @@ const Components = ({ open, handleClose }) => {
                   type="password"
                   name="confirmPassword"
                   className="textFieldStyling"
-                  id="confirmInput"
                   onFocus={(e) => {
                     e.target.style.borderColor = "#F57E2A";
                   }}
@@ -151,7 +143,6 @@ const Components = ({ open, handleClose }) => {
                   alt=""
                   width="25px"
                   className="eyeIconStyling"
-                  onClick={confirmPasswordFunction}
                 />
               </div>
             </div>
@@ -201,7 +192,7 @@ const Components = ({ open, handleClose }) => {
             </div>
             <div className="btnParent">
               <Button className="btnAddUsers" type="submit" variant="contained">
-                Add Users
+                Save Changes
               </Button>
             </div>
           </Box>

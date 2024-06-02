@@ -1,27 +1,26 @@
 @import "../../assets/styles/partials/allPartialFile";
-
-.parent {
+.parentLockModal {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 995px;
-  //   background: background.paper;
-  background: white;
+  // bgcolor: 'background.paper;
+  background-color: white;
   border-radius: 40px;
 }
-.header {
+.headerLock {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 28px;
   border-bottom: 1px solid #d1d1d1;
 }
-.modalLeftName {
+.modalLeftNameLock {
   font-size: 20px;
   font-weight: 400;
 }
-.closeButton {
+.closeButtonLock {
   color: white;
   background: rgb(245, 126, 42);
   border-radius: 50%;
@@ -32,15 +31,12 @@
   align-items: center;
   justify-content: center;
 }
-.personIcon {
-  cursor: pointer;
-}
-.parentPersonicon {
+.personAndCameraParentLock {
   position: relative;
   text-align: center;
   margin: 20px 0;
 }
-.cameraImageStyling {
+.cameraIconLock {
   position: absolute;
   background: rgb(245, 126, 42);
   width: 41.8px;
@@ -51,7 +47,10 @@
   left: 545px;
   cursor: pointer;
 }
-.body {
+.personIconLock {
+  cursor: pointer;
+}
+.bodyLock {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -60,12 +59,7 @@
   gap: 15px;
   padding: 0px 38px;
 }
-.labelStyling {
-  font-size: 20px;
-  font-weight: 400px;
-  line-height: 25.3px;
-}
-.textFieldStyling {
+.textFieldStylingLock {
   width: 100%;
   height: 54px;
   border-radius: 48px;
@@ -75,24 +69,15 @@
   outline: none;
   transition: border-color 0.3s ease;
 }
-.eyeIconStyling {
+.eyeIconStylingLock{
   position: absolute;
-  left: 410px;
-  top: 65px;
+  left: 380px;
+  top: 54px;
   cursor: pointer;
 }
-.dropdownSelect {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0px 5px;
-  flex-wrap: wrap;
-  gap: 15px;
-  padding: 0px 38px;
-}
-.btnParent {
+.btnParentLock{
   text-align: center;
-  .btnAddUsers {
+  .btnPassword{
     width: 350px;
     height: 45px;
     border-radius: 16px;
@@ -101,35 +86,32 @@
     margin: 40px 0px;
   }
 }
-.btnParent {
+.btnParentLock{
   text-align: center;
-  .btnAddUsers:hover {
+  .btnPassword:hover{
     color: white;
     background: rgb(245, 126, 42);
   }
 }
 
-@media (max-width: 1960px) {
-  .parent {
+@media (max-width: 1260px) {
+  .parentLockModal {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 795px;
-    height: 650px;
-    //   background: background.paper;
+    width: 700px;
     background: white;
     border-radius: 40px;
   }
-  .body {
-    justify-content: center;
-    flex-wrap: wrap;
+  .bodyLock {
+    display: block;
     gap: 15px;
   }
-  .personIcon {
+  .personIconLock {
     width: 100px;
   }
-  .cameraImageStyling {
+  .cameraIconLock {
     position: absolute;
     background: rgb(245, 126, 42);
     width: 31.8px;
@@ -137,15 +119,15 @@
     padding: 3px;
     border-radius: 50%;
     top: 85px;
-    left: 430px;
+    left: 380px;
     cursor: pointer;
   }
-  .labelStyling {
+  .labelStylingLock {
     font-size: 16px;
     font-weight: 300px;
     line-height: 18.3px;
   }
-  .textFieldStyling {
+  .textFieldStylingLock {
     width: 100%;
     height: 44px;
     border-radius: 48px;
@@ -155,38 +137,31 @@
     outline: none;
     transition: border-color 0.3s ease;
   }
-  .eyeIconStyling {
+  .eyeIconStylingLock{
     position: absolute;
-    left: 310px;
-    top: 55px;
+    left: 580px;
+    top: 54px;
     cursor: pointer;
   }
+  .btnParentLock{
+    text-align: center;
+    .btnPassword{
+      width: 95%;
+    }
+  }
 }
-// Mobile view
+
 @media (max-width: 851px) {
-  .parent {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  .parentLockModal {
     width: 500px;
-    height: 860px;
-    //   background: background.paper;
-    background: white;
-    border-radius: 40px;
   }
-  .header {
+  .headerLock{
     padding: 18px;
-    border-bottom: 1px solid #d1d1d1;
   }
-  .body {
-    display: block;
-    gap: 15px;
-  }
-  .personIcon {
+  .personIconLock {
     width: 60px;
   }
-  .cameraImageStyling {
+  .cameraIconLock {
     position: absolute;
     background: rgb(245, 126, 42);
     width: 21.8px;
@@ -197,37 +172,16 @@
     left: 265px;
     cursor: pointer;
   }
-  .labelStyling {
-    font-size: 16px;
+  .labelStylingLock {
+    font-size: 14px;
     font-weight: 300px;
     line-height: 14.3px;
   }
-  .textFieldStyling {
-    width: 100%;
-    height: 44px;
-    border-radius: 48px;
-    margin-bottom: 10px;
-    border: 1px solid var(--light-gray, #cdcdcd);
-    padding: 0px 20px;
-    outline: none;
-    transition: border-color 0.3s ease;
-  }
-  .eyeIconStyling {
+  .eyeIconStylingLock{
     position: absolute;
     left: 380px;
     top: 54px;
     cursor: pointer;
   }
-  .dropdownSelect {
-    display: block;
-    padding: 0px 5px;
-    gap: 15px;
-    padding: 0px 38px;
-  }
-  .btnParent {
-    text-align: center;
-    .btnAddUsers {
-      width: 95%;
-    }
-  }
+
 }
