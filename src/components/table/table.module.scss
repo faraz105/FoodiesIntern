@@ -1,18 +1,31 @@
 @import "../../assets/styles/partials/allPartialFile";
-
+// @include fontStyle($font_18, $primary_black, $font_weight_400);
 .table_section {
   width: 100%;
   padding: 30px;
   margin: 0px auto !important;
+  @include mediaQueryScreen(desktop) {
+    overflow-x: scroll;
+  }
 
   .headerContainer {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
     padding: 10px;
+    @include mediaQueryScreen(desktop) {
+      display: flex;
+      flex-direction: column;
+      margin-top: 10px;
+    }
 
     .content {
       display: flex;
+      @include mediaQueryScreen(desktop) {
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+      }
 
       .inner {
         display: flex;
@@ -21,18 +34,12 @@
       }
 
       .manageCustomer {
+        @include fontStyle($font_24, $primary_black, $font_weight_400);
         margin: 0;
-        font-family: MADE Okine Sans PERSONAL USE;
-        font-weight: 400;
-        font-size: 24px;
-        font-weight: bold;
       }
 
       .total {
-        font-family: MADE Okine Sans PERSONAL USE;
-        color: gray;
-        font-size: 16px;
-        font-weight: 300;
+        @include fontStyle($font_16, $primary_grey, $font_weight_300);
         margin-top: 7px;
       }
     }
@@ -45,6 +52,9 @@
       position: relative;
       display: flex;
       align-items: center;
+      @include mediaQueryScreen(desktop) {
+        margin-top: 10px;
+      }
     }
 
     .searchIcon {
@@ -53,10 +63,8 @@
     }
 
     .searchInput {
-      text-align: center;
-      font-size: 12px;
-      font-weight: 400;
-      color: #313131 !important;
+      @include fontStyle($font_12, $primary_black, $font_weight_400);
+      padding-left: 30px;
     }
 
     .searchInputContainer input[type="text"] {
@@ -64,21 +72,33 @@
       border: 1px solid #ddd;
       height: 35px !important;
       width: 168px !important;
-      font-weight: bold;
+      font-family: "MADE Okine Sans", sans-serif !important;
     }
   }
 
   .wrapperContainer {
+    border-radius: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    @include mediaQueryScreen(tabletX) {
+      overflow-x: auto !important;
+      width: 800px !important;
+      margin: auto;
+    }
+    @include mediaQueryScreen(phoneX) {
+      max-width: 510px !important;
+    }
     .table {
-      font-family: $font-family;
       border-spacing: 0;
-      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-      border-radius: 30px;
       margin-top: 10px;
+      @include mediaQueryScreen(desktop) {
+        overflow: scroll;
+        height: 100px;
+      }
     }
     .columnHeader {
-      font-weight: bold;
+      @include fontStyle($font_14, $primary_black, $font_weight_400);
       padding: 24px;
+      font-family: "MADE Okine Sans", sans-serif !important;
     }
     .imagecontent {
       display: flex;
@@ -89,58 +109,60 @@
       margin-right: 10px;
     }
     .cell {
+      @include fontStyle($font_12, $primary_black, $font_weight_400);
       padding: 24px;
+      font-family: "MADE Okine Sans", sans-serif !important;
     }
   }
 
   .paginationcontainer {
     display: flex;
     margin-top: 25px;
+    @include fontStyle($font_14, $primary_grey, $font_weight_400);
 
     .pagination {
       display: flex;
       justify-content: center;
-
       margin: 0 auto;
     }
   }
 }
 
-@media (max-width: 1200px) {
-  .table_section {
-    overflow-x: scroll;
-  }
+// @include mediaQueryScreen(desktop) {
+//   .table_section {
+//     overflow-x: scroll;
+//   }
 
-  .table {
-    overflow: scroll;
-    height: 100px;
-  }
+//   .table {
+//     overflow: scroll;
+//     height: 100px;
+//   }
 
-  .headerContainer {
-    display: flex;
-    flex-direction: column;
-    margin-top: 10px;
-  }
-  .content {
-    display: flex;
-    flex-direction: column;
-    margin-top: 10px;
-  }
-  .searchInputContainer {
-    margin-top: 10px;
-  }
-}
+//   .headerContainer {
+//     display: flex;
+//     flex-direction: column;
+//     margin-top: 10px;
+//   }
+//   .content {
+//     display: flex;
+//     flex-direction: column;
+//     margin-top: 10px;
+//   }
+//   .searchInputContainer {
+//     margin-top: 10px;
+//   }
+// }
 
-@media (max-width: 992px) {
-  .wrapperContainer {
-    overflow-x: auto !important;
-    width: 800px !important;
-    margin: auto;
-  }
-}
+// @include mediaQueryScreen(tabletX) {
+//   .wrapperContainer {
+//     overflow-x: auto !important;
+//     width: 800px !important;
+//     margin: auto;
+//   }
+// }
 
-@media (max-width: 575px) {
-  .wrapperContainer {
-    max-width: 400px !important;
-  }
-}
+// @include mediaQueryScreen(phoneX) {
+//   .wrapperContainer {
+//     max-width: 510px !important;
+//   }
+// }

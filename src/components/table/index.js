@@ -22,7 +22,6 @@ const MyTable = () => {
   const [customers, setCustomers] = useState([]);
   const [customersDeep, setCustomersDeep] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
-  
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(5);
 
@@ -62,10 +61,20 @@ const MyTable = () => {
     customer.name.toLowerCase().includes(searchTerm.toLowerCase())
   ) : customers;
   
+  
   // Calculate total number of pages based on filtered customers and rows per page
   const currentPage = page + 1;
   const totalPages = Math.ceil(filteredCustomers.length / rowsPerPage);
-  const totalEntriesText = `Showing ${currentPage} to ${totalPages} of ${rowsPerPage} entries`; 
+  
+  let totalEntriesText;
+  if (filteredCustomers.length === 0) {
+    totalEntriesText = `Showing 0 to 0 of 0 entries `;
+  } else if (searchTerm.length > 0) {
+    const searchCount = filteredCustomers.length;
+    totalEntriesText = `Showing 1 to ${searchCount} of ${searchCount} entries`;
+  } else {
+    totalEntriesText = `Showing ${currentPage} to ${totalPages} of ${rowsPerPage} entries`;
+  }
 
   return (
     <div className={classes.table_section}>
@@ -114,8 +123,8 @@ const MyTable = () => {
           </TableHead>
           <TableBody>
             {(searchTerm.length > 0 ? filteredCustomers : customersDeep.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)).length === 0 ? (
-              <TableRow>
-                <TableCell colSpan={7} className={classes.noRecordsCell}>
+              <TableRow>  
+                <TableCell sx={style} colSpan={7} className={classes.noRecordsCell}>
                   No records found
                 </TableCell>
               </TableRow>
@@ -133,6 +142,7 @@ const MyTable = () => {
                   <TableCell sx={style} className={classes.cell}>{customer.phone}</TableCell>
                   <TableCell sx={style} className={classes.cell}>{customer.username}</TableCell>
                   <TableCell sx={style} className={classes.cell}>{customer.website}</TableCell>
+                 
                   <TableCell sx={style} className={classes.cell}>
                     <Delete customer={customer} />
                   </TableCell>

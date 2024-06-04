@@ -4,16 +4,21 @@
   display: flex;
   gap: 10px;
   margin-top: 5px;
+
   > .MuiStack-root {
-    overflow: hidden;
-    
+    // overflow: hidden;
+
     > .MuiFormControl-root {
       min-width: 0px;
-   
+
       > .MuiFormLabel-root {
         display: none !important;
       }
       > .MuiInputBase-root {
+       
+        color: #313131 !important;
+        font-family: 'MADE Okine Sans', sans-serif !important;
+
         > .MuiInputBase-input {
           padding: 3px 3px !important;
           order: 1 !important;
@@ -21,9 +26,8 @@
           height: 20px;
           margin-left: 10px;
           margin-right: 10px;
-          font-size: 12px !important;
+          font-size: $font_10 !important;
           font-weight: bold;
-         
         }
       }
 
@@ -37,23 +41,6 @@
   }
 }
 
-// .table_wrapperContainer__+WCkq{
-//   > .MuiTableBody-root{
-//     > .MuiTableRow-root{
-
-//       > .MuiTableCell-root{
-//         border: none !important;
-//       }
-//     }
-//   }
-// }
-
-// .table_wrapperContainer__+WCkq{
-//  > .MuiTableCell-root{
-//   border-bottom: none !important;
-// }
-// }
-
 .customPagination {
   .Mui-selected {
     background-color: $primary_orange !important;
@@ -65,6 +52,3 @@
     border-radius: 10px;
   }
 }
-
-
-
