@@ -21,7 +21,7 @@ import EditModal from '../EditModal/EditModal';
 import { Password } from "@mui/icons-material";
 import PasswordChangeComponent from "../LockChange/PasswordChangeComponent";
 import Delete from "../Delete/Delete";
-export default function BasicTable({ data ,setData }) {
+export default function BasicTable({ data , setData }) {
   // const [usersData, setUsersData] = useState(users);
   const [currentPage, setCurrentPage] = useState(1);
   const [searchText, setSearchText] = useState("");
@@ -30,7 +30,7 @@ export default function BasicTable({ data ,setData }) {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const [openModal, setOpenModal] = React.useState(false);
-
+  const [deleteUserId, setDeleteUserId] = useState(null);
   const [openEditModal, setOpenEditModal] = React.useState(false);
   const handleEditOpenModal = () => setOpenEditModal(true)
   const handleEditCloseModal = () => setOpenEditModal(false);
@@ -41,7 +41,20 @@ export default function BasicTable({ data ,setData }) {
   const handleLockClose = () => setOpenLockModal(false);
   /////////// delete Modal ///////////////////
   const [openDeleteModal, setOpenDeleteModal] = React.useState(false);
-  const handleDeleteOpen = () => setOpenDeleteModal(true);
+  const handleDeleteOpen = (id) =>{
+    console.log(id, "asdasdas")
+    setDeleteUserId(id);
+    setOpenDeleteModal(true);
+  } 
+  const handleDeleteConfirm = () => {
+    setData(data.filter((user) => user.id !== deleteUserId));
+    setOpenDeleteModal(false);
+  };
+
+const getId =()=> {
+  return deleteUserId
+}
+
   const handleDeleteClose = () => setOpenDeleteModal(false);
   const handleSearch = (value) => {
     const delay = 500; 
@@ -112,19 +125,18 @@ export default function BasicTable({ data ,setData }) {
             </TableRow>
           </TableHead>
           <TableBody>
-            {data?.slice((currentPage - 1) * 10, currentPage * 10)?.map((user) => (
+            {data?.slice((currentPage - 1) * 10, currentPage * 10)?.map((user,index) => (
                 <TableRow
                   key={user?.id}
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
                   <TableCell align="left">
-                    {user?.id < 10 ? "0" : ""}
-                    {user?.id}
+                    {(currentPage - 1) * 10 + index + 1}
                   </TableCell>
                   <TableCell align="left">{user?.date}</TableCell>
                   <TableCell align="left" className="usernameAndAvatarStyling">
                     <span>
-                      <img src={user.userImage} alt="UserImage" />
+                       <img src="Images/user1Image.png" width="30px" alt="UserImage" />
                     </span>
                     <span style={{ padding: "" }}>{user?.username}</span>
                   </TableCell>
@@ -139,13 +151,12 @@ export default function BasicTable({ data ,setData }) {
                       <img src="Images/delicon-img.png" alt="" onClick={handleLockOpenModal}/>
                     </span>
                     <EditModal  openEditModal={openEditModal} handleEditCloseModal={handleEditCloseModal}/>
-                    {/* <AddNewUserComponents open={openModal} handleClose={handleCloseModal}  textButton={"save changes"}/> */}
                     <PasswordChangeComponent openLockModal={openLockModal} handleLockClose={handleLockClose} textButton={"Save Changes"}/>
-                   < Delete  openDeleteModal={openDeleteModal} handleDeleteClose={handleDeleteClose}  textButton={"Yes Delete"} />
+                   < Delete  openDeleteModal={openDeleteModal} handleDeleteClose={handleDeleteClose} user={getId} handleDeleteConfirm={handleDeleteConfirm} textButton={"Yes Delete"} />
                     <span className="deleteIcon">
-                      <img src="Images/delete-img.png" alt="" onClick={handleDeleteOpen}/>
+                      <img src="Images/delete-img.png" alt="" onClick={()=> handleDeleteOpen(user.id)}/>
                     </span>
-                  </TableCell>
+                  </TableCell>  
                 </TableRow>
               ))}
           </TableBody>

@@ -6,7 +6,8 @@ import Fade from "@mui/material/Fade";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import CustomBackdrop from "../CustomBackdrop/CustomBackdrop";
-// import { users } from "../ManageUser/data/db";
+import UseFetch from "../UseFetch";
+import { useParams } from "react-router-dom";
 const style = {
   position: "absolute",
   top: "50%",
@@ -19,9 +20,12 @@ const style = {
   borderRadius: "50px",
   textAlign: "center"
 };
-const Delete = ({ openDeleteModal, handleDeleteClose, textButton }) => {
+const Delete = ({ openDeleteModal,setOpenDeleteModal, handleDeleteClose, textButton, user }) => {
+  const { id } = useParams();
+  const {data, setData, isPending, error} = UseFetch('http://localhost:8000/users' + id);
   const [image, setImage] = useState("/Images/DeleteImage.gif");
-  const [deleteText, setdeleteText] = useState(
+  const [deleteUserId, setDeleteUserId] = useState(null);
+  const [deleteText, setdeleteText] = useState( 
     "Are You sure you want to Delete this Customer ?"
   );
   const [isDeleted, setIsDeleted] = useState(false);
@@ -33,11 +37,15 @@ const Delete = ({ openDeleteModal, handleDeleteClose, textButton }) => {
     }
   }, [openDeleteModal]);
 
-  const handleDeleteConfirm = (userId) => {
-    setImage("/Images/DeleteSuccessfullyImage.gif");
-    setdeleteText("Menu Deleted Successfully!");
-    setIsDeleted(true);
-
+  const handleDeleteConfirm = () => {
+   const data = user()
+   console.log(data, 'daadadt')
+  //  fetch("http://localhost:8000/users/" + user.id, {
+  //   method: 'DELETE'
+  //  }).then(()=>)
+    // setImage("/Images/DeleteSuccessfullyImage.gif");
+    // setdeleteText("Menu Deleted Successfully!");
+    // setIsDeleted(true);
   };
 
   return (
@@ -108,7 +116,7 @@ const Delete = ({ openDeleteModal, handleDeleteClose, textButton }) => {
                   }}
                   onClick={handleDeleteConfirm}
                 >
-                  {textButton}
+                  Yes, Delete
                 </Button>
               </div>
             )}
