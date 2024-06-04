@@ -1,5 +1,5 @@
 @import "../../../assets/styles/partials/allPartialFile";
-.mainResetPassword {
+.mainChangePassword {
   display: flex;
   .defaultForm {
     flex: 1;
@@ -54,9 +54,20 @@
         p {
           @include fontStyle($font_20, $primary_black, $font_weight_300);
           margin: 0 0 10px;
+          span {
+            color: $primary_orange;
+          }
           @include mediaQueryScreen(desktopXX) {
             font-size: 1vw;
             margin-bottom: 1vw;
+          }
+          @include mediaQueryScreen(desktop) {
+            font-size: $font_16;
+          }
+          @include mediaQueryScreen(phoneX) {
+            br{
+              display: none;
+            }
           }
         }
       }
@@ -66,6 +77,14 @@
         width: 100%;
         gap: 0.5rem;
         position: relative;
+        .errorMsg{
+          @include fontStyle($font_11, $primary_red, $font_weight_400);
+          letter-spacing: 1px;
+          @include mediaQueryScreen(desktopXX) {
+              font-size: 0.8vw;
+          }
+        }
+       
 
         label {
           @include fontStyle($font_18, $primary_black, $font_weight_400);
@@ -107,6 +126,7 @@
           }
         }
       }
+      
       button {
         margin-top: 15px;
         font-weight: 400;
@@ -183,7 +203,7 @@
       display: none;
     }
     .bannerHeading{
-      position: fixed;
+      position: absolute;
       z-index: 9;
       width: 565px;
       right: 0;
@@ -194,7 +214,7 @@
       line-height: 66px;
       @include mediaQueryScreen(desktopX) {
         font-size: 4vw;
-        right: 9vw;
+        left: 0;
         width: auto;
       }
       @include mediaQueryScreen(desktopXX) {
@@ -226,3 +246,4 @@
     }
   }
 }
+

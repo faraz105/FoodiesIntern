@@ -1,7 +1,7 @@
 import axios from "../utilities/index";
 
 export const userLogin = (data) => {
-  return axios.post("/login", data);
+  return axios.post("/signin", data);
 };
 export const userResetPassword = (data) => {
   return axios.post("/resetpassword", data);

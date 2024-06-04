@@ -54,6 +54,9 @@
         p {
           @include fontStyle($font_20, $primary_black, $font_weight_300);
           margin: 0 0 10px;
+          span {
+            color: $primary_orange;
+          }
           @include mediaQueryScreen(desktopXX) {
             font-size: 1vw;
             margin-bottom: 1vw;
@@ -226,7 +229,7 @@
       display: none;
     }
     .bannerHeading{
-      position: absolute;
+      position: fixed;
       z-index: 9;
       width: 565px;
       right: 0;
@@ -237,7 +240,7 @@
       line-height: 66px;
       @include mediaQueryScreen(desktopX) {
         font-size: 4vw;
-        left: 0;
+        right: 9vw;
         width: auto;
       }
       @include mediaQueryScreen(desktopXX) {
