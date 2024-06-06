@@ -1,9 +1,6 @@
-
 import React, { useState, useEffect } from "react";
 import ReusableTable from "../../components/resuabletable/index";
-import PaginationComponent from "../../components/tablepagination/index";
 import Delete from "../../components/deleteModal/index";
-import SearchIcon from "@mui/icons-material/Search"
 import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
@@ -11,6 +8,7 @@ import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import TextField from "@mui/material/TextField";
 import classes from "./managecustomer.module.scss";
 import "./managecustomerBuiltin.scss"
+import SearchIcon from '@mui/icons-material/Search';
 
 const CustomerManagement = () => {
   const [customers, setCustomers] = useState([]);

@@ -9,8 +9,7 @@ import profile from "../../assets/images/icon.svg";
 import deleteIcon from "../../assets/images/del.svg"; 
 import PaginationComponent from "../tablepagination";
 import password from "../../assets/images/pass.svg";
-
-
+import edit from "../../assets/images/edit.svg";
 
 
 
@@ -97,6 +96,7 @@ useEffect(() => {
             <div className={classes.actionBtn}>
                 {handleEdit &&  
                 <div className={classes.edit} onClick={() => handleDelete(row?.id)}  >
+                      <img src={edit} alt="password"  />
                 </div>
                 }
                 {handlePassword && 

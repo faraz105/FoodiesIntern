@@ -1,5 +1,5 @@
 @import "../../assets/styles/partials/allPartialFile";
-// @include fontStyle($font_18, $primary_black, $font_weight_400);
+
 .table_section {
   width: 100%;
   padding: 30px;
@@ -59,7 +59,9 @@
 
     .searchIcon {
       position: absolute;
-      margin-left: 12px;
+      margin-left: 7px;
+      height: 16px;
+      width: 16px;
     }
 
     .searchInput {
@@ -76,21 +78,7 @@
     }
   }
 
-  // .wrapperContainer {
-  //   // border-radius: 30px;
-  //   // box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  //   @include mediaQueryScreen(tabletX) {
-  //     overflow-x: auto !important;
-  //     width: 800px !important;
-  //     margin: auto;
-  //   }
-  //   @include mediaQueryScreen(phoneX) {
-  //     overflow-x: auto !important;
-  //     max-width: 510px !important;
-  //     width: 100%;
-  //   }
-  
-  // }
+ 
 
  
 }
