@@ -1,4 +1,4 @@
-import { IoMdClose } from "react-icons/io";
+import CloseIcon from "@mui/icons-material/Close"
 import React from 'react';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
@@ -14,7 +14,7 @@ const BasicModal = ({ isOpen, closeModal, children }) => {
     >
       <Box className="modalbox">
         <button className="closeButton" onClick={closeModal}>
-          <IoMdClose size={24} />
+          <CloseIcon size={24} />
         </button>
         {children}
       </Box>

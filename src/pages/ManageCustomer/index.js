@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import ReusableTable from "../../components/resuabletable/index";
 import PaginationComponent from "../../components/tablepagination/index";
 import Delete from "../../components/deleteModal/index";
-import { CiSearch } from "react-icons/ci";
+import SearchIcon from "@mui/icons-material/Search"
 import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
@@ -115,7 +115,7 @@ const CustomerManagement = () => {
           </div>
         </div>
         <div className={classes.searchInputContainer}>
-          <CiSearch className={classes.searchIcon} />
+          <SearchIcon className={classes.searchIcon} />
           <input
             type="text"
             placeholder="Search in Customer"

@@ -9,7 +9,8 @@ import profile from "../../assets/images/icon.svg";
 import deleteIcon from "../../assets/images/del.svg"; 
 import PaginationComponent from "../tablepagination";
 import password from "../../assets/images/pass.svg";
-import { FiEdit } from "react-icons/fi";
+
+
 
 
 
@@ -96,7 +97,6 @@ useEffect(() => {
             <div className={classes.actionBtn}>
                 {handleEdit &&  
                 <div className={classes.edit} onClick={() => handleDelete(row?.id)}  >
-                     <FiEdit alt="edit"  />
                 </div>
                 }
                 {handlePassword && 
