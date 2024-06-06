@@ -191,7 +191,7 @@
               font-size: 0.8vw;
           }
         }
-        label {
+        > label {
           @include fontStyle($font_18, $primary_black, $font_weight_400);
           text-transform: capitalize;
           margin-bottom: 5px;

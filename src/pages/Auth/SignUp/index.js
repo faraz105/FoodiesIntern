@@ -9,6 +9,9 @@ import * as Yup from "yup";
 import CircularProgress from "@mui/material/CircularProgress";
 import ProfileInfo from "./profileInfo";
 import BusinessInfo from "./businessInfo";
+import BusinessLocation from "./businessLocation";
+import BusinessLegal from "./businessLegal";
+import BusinessAccount from "./businessAccount";
 
 const SignUp = () => {
   const dispatch = useDispatch();
@@ -25,16 +28,14 @@ const SignUp = () => {
 
     }
   );
-console.log("signupFlow",signupFlow)
-console.log("signupData",signupData)
 
   return (
     <div className={classes.containerSignup}>
       {signupFlow?.profileInfo && <ProfileInfo setSignupData={setSignupData} setSignupFlow={setSignupFlow}  signupFlow={signupFlow} signupData={signupData} />}
       {signupFlow?.businessInfo && <BusinessInfo setSignupData={setSignupData} setSignupFlow={setSignupFlow}  signupFlow={signupFlow} signupData={signupData} />}
-      {signupFlow?.restaurantInfo && <ProfileInfo />}
-      {signupFlow?.legalInfo && <ProfileInfo />}
-      {signupFlow?.accountInfo && <ProfileInfo />}
+      {signupFlow?.restaurantInfo && <BusinessLocation setSignupData={setSignupData} setSignupFlow={setSignupFlow}  signupFlow={signupFlow} signupData={signupData} />}
+      {signupFlow?.legalInfo && <BusinessLegal setSignupData={setSignupData} setSignupFlow={setSignupFlow}  signupFlow={signupFlow} signupData={signupData}/>}
+      {signupFlow?.accountInfo && <BusinessAccount setSignupData={setSignupData} setSignupFlow={setSignupFlow}  signupFlow={signupFlow} signupData={signupData} />}
     </div>
   );
 };
