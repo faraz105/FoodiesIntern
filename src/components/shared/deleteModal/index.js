@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import BasicModal from "../basicmodal/index.js";
 import Button from "../Button/index";
 import classes from "./deleteModal.module.scss"; 
-import recycle from "../../assets/images/delete_icon.gif";
-import success from "../../assets/images/success_icon.gif";
+import recycle from "../../../assets/images/delete_icon.gif";
+import success from "../../../assets/images/success_icon.gif";
 
 const Delete = ({isOpen , onClose, handleConfirmDelete , openConfirmDelete }) => {
 

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import ReusableTable from "../../components/resuabletable/index";
-import Delete from "../../components/deleteModal/index";
+import ReusableTable from "../../components/shared/resuabletable";
+import Delete from "../../components/shared/deleteModal";
 import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";

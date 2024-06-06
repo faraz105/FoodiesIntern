@@ -5,11 +5,11 @@ import TableCell from "@mui/material/TableCell";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import classes from "./table.module.scss";
-import profile from "../../assets/images/icon.svg";
-import deleteIcon from "../../assets/images/del.svg"; 
+import profile from "../../../assets/images/icon.svg";
+import deleteIcon from "../../../assets/images/del.svg"; 
 import PaginationComponent from "../tablepagination";
-import password from "../../assets/images/pass.svg";
-import edit from "../../assets/images/edit.svg";
+import password from "../../../assets/images/pass.svg";
+import edit from "../../../assets/images/edit.svg";
 
 
 
