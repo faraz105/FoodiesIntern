@@ -8,6 +8,6 @@ export const getAllCards = ( data, headers) => {
   return axios.post(`/cards/get-all-cards-paginate`, data ,headers );
 };
 
-export const getCardDetail = (  id , headers) => {
-  return axios.get(`/cards/card/${id}` ,headers );
+export const getCardDetail = (  id ) => {
+  return axios.get(`/cards/card/${id}` );
 };

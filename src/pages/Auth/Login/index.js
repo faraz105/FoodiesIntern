@@ -45,6 +45,7 @@ const Login = () => {
           validationSchema={loginSchema}
           onSubmit={async (values) => {
             setLoading(true);
+            navigate("/dashboard");
             console.log("values:", values);
             // try {
             //   const res = await userLogin(values);
