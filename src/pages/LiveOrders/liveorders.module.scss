@@ -1,0 +1,77 @@
+.tablecontainer {
+    color: black;
+    width: 323.86px;
+    height: 500px; 
+    overflow-y: hidden; 
+    margin-bottom: 20px; 
+    position: relative; 
+
+    
+    &:hover {
+        overflow-y: auto; 
+    }
+
+
+.ordersList {
+    list-style: none;
+    padding: 0;
+}
+
+.orderItem {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; 
+    background-color: orange;
+    border-radius: 10px;
+    height: 76.13px;
+    width: 303.86px; 
+    padding-right: 20px;
+}
+
+.x {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px; 
+}
+
+.profile {
+    margin-left: 16px;
+    margin-right: 5px; 
+}
+
+.a {
+    display: flex;
+    align-items: center;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+}
+
+.tablecontainer::-webkit-scrollbar {
+    width: 3px; 
+}
+
+.tablecontainer::-webkit-scrollbar-track {
+    background: transparent; 
+}
+
+.tablecontainer::-webkit-scrollbar-thumb {
+    background: #999; 
+    border-radius: 5px; 
+}
+
+
+
+
+.qw{display: flex;}
+
+.kh{display: flex;
+flex-direction: column;
+margin-left: 12px;}
+

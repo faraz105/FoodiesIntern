@@ -62,6 +62,7 @@ const VerifyOTP = () => {
           onSubmit={async (values, { setSubmitting }) => {
             const otp = values.otp1 + values.otp2 + values.otp3 + values.otp4;
           setTimeout(() => {
+            setLoading(true);
             console.log(otp);
             setSubmitting(false);
           }, 400);
@@ -96,8 +97,8 @@ const VerifyOTP = () => {
             <Form onSubmit={handleSubmit}>
               <div className={classes.formHeader}>
                 <img src={logo} alt="logo" />
-                <h1>Reset Password</h1>
-                <p>Please Enter your Email address to request <br/> a Password reset!</p>
+                <h1>Verify OTP!</h1>
+                <p>We’ve send you the verification code on  <br/> <span>sipraokasha@gmail.com!</span></p>
               </div>
 
               <div className={classes.inputMain}>

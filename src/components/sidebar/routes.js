@@ -28,6 +28,7 @@ const MenuData = [
     dropdown: true,
     items: [
       { title: "Manage Customer", link: "/customers/manageCustomer" },
+      
       { title: "Manage User", link: "/customers/manageUser" },
       { title: "Manage Roles", link: "/customers/manageRoles" },
       { title: "Customer Reviews", link: "/customers/customerReviews" }

@@ -1,0 +1,84 @@
+@import "../../assets/styles/partials/allPartialFile";
+
+.table_section {
+  width: 100%;
+  padding: 30px;
+  margin: 0px auto !important;
+  @include mediaQueryScreen(desktop) {
+    overflow-x: scroll;
+  }
+
+  .headerContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 10px;
+    @include mediaQueryScreen(desktop) {
+      display: flex;
+      flex-direction: column;
+      margin-top: 10px;
+    }
+
+    .content {
+      display: flex;
+      @include mediaQueryScreen(desktop) {
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+      }
+
+      .inner {
+        display: flex;
+        flex-direction: column;
+        margin-right: 20px;
+      }
+
+      .manageCustomer {
+        @include fontStyle($font_24, $primary_black, $font_weight_400);
+        margin: 0;
+      }
+
+      .total {
+        @include fontStyle($font_16, $primary_grey, $font_weight_300);
+        margin-top: 7px;
+      }
+    }
+
+    .head {
+      margin-top: 14px;
+    }
+
+    .searchInputContainer {
+      position: relative;
+      display: flex;
+      align-items: center;
+      @include mediaQueryScreen(desktop) {
+        margin-top: 10px;
+      }
+    }
+
+    .searchIcon {
+      position: absolute;
+      margin-left: 7px;
+      height: 16px;
+      width: 16px;
+    }
+
+    .searchInput {
+      @include fontStyle($font_12, $primary_black, $font_weight_400);
+      padding-left: 30px;
+    }
+
+    .searchInputContainer input[type="text"] {
+      border-radius: 16px;
+      border: 1px solid #ddd;
+      height: 35px !important;
+      width: 168px !important;
+      font-family: "MADE Okine Sans", sans-serif !important;
+    }
+  }
+
+ 
+
+ 
+}

@@ -1,0 +1,19 @@
+@import "../../../assets/styles/partials/allPartialFile";
+.button {
+  background-color: $primary_orange;
+  color: $primary_white;
+  border-radius: 26px;
+  padding: 10px 20px;
+  border: none;
+  width: 350px;
+  box-shadow: 5px 5px 15px rgba(245, 126, 42, 0.3);
+  font-family: "MADE Okine Sans", sans-serif !important;
+  cursor: pointer;
+  @include mediaQueryScreen(desktop) {
+    width: 250px;
+  }
+
+  @include mediaQueryScreen(phoneX) {
+    width: 150px;
+  }
+}
