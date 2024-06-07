@@ -11,6 +11,7 @@ import ResetPassword from './pages/Auth/ResetPassword';
 import VerifyOTP from './pages/Auth/VerifyOTP';
 import ChangePassword from './pages/Auth/ChangePassword';
 import SignUp from './pages/Auth/SignUp';
+import LiveOrders  from "./pages/LiveOrders";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
         <Route path="contact" element={<Contact />} />
         <Route path="merchantCard" element={<MerchantCard />} />
         <Route path="/customers/manageCustomer" element={<ManageCustomer />} />
+        <Route path="/orders/liveOrders" element={<LiveOrders />} />
         <Route path="*" element={<NoPage />} />
       </Route>
     </Routes>

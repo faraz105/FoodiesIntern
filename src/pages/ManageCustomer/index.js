@@ -135,8 +135,6 @@ const CustomerManagement = () => {
           // handleEdit
           // handlePassword
 
-
-          
         />
       </div>
       {deleteId && 
@@ -148,7 +146,6 @@ const CustomerManagement = () => {
 
           />}
       
-    
     </div>
   );
 };
