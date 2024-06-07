@@ -8,6 +8,8 @@ import Typography from "@mui/material/Typography";
 import CustomBackdrop from "../CustomBackdrop/CustomBackdrop";
 import UseFetch from "../UseFetch";
 import { useParams } from "react-router-dom";
+import Deleteimg from "../../assets/images/DeleteImage.gif";
+import Successimg from "../../assets/images/DeleteSuccessfullyImage.gif";
 const style = {
   position: "absolute",
   top: "50%",
@@ -16,38 +18,17 @@ const style = {
   width: 579,
   height: 444,
   bgcolor: "background.paper",
-  border: 'none',
+  border: "none",
   borderRadius: "50px",
-  textAlign: "center"
+  textAlign: "center",
 };
-const Delete = ({ openDeleteModal,setOpenDeleteModal, handleDeleteClose, textButton, user }) => {
-  const { id } = useParams();
-  const {data, setData, isPending, error} = UseFetch('http://localhost:8000/users' + id);
-  const [image, setImage] = useState("/Images/DeleteImage.gif");
-  const [deleteUserId, setDeleteUserId] = useState(null);
-  const [deleteText, setdeleteText] = useState( 
-    "Are You sure you want to Delete this Customer ?"
-  );
-  const [isDeleted, setIsDeleted] = useState(false);
-  useEffect(() => {
-    if (openDeleteModal) {
-      setImage("/Images/DeleteImage.gif");
-      setdeleteText("Are you sure you want to delete this customer?");
-      setIsDeleted(false);
-    }
-  }, [openDeleteModal]);
-
-  const handleDeleteConfirm = () => {
-   const data = user()
-   console.log(data, 'daadadt')
-  //  fetch("http://localhost:8000/users/" + user.id, {
-  //   method: 'DELETE'
-  //  }).then(()=>)
-    // setImage("/Images/DeleteSuccessfullyImage.gif");
-    // setdeleteText("Menu Deleted Successfully!");
-    // setIsDeleted(true);
-  };
-
+const Delete = ({
+  openDeleteModal,
+  openDelModal,
+  handleDeleteClose,
+  handleDeleteConfirm,
+  openSuccessModal,
+}) => {
   return (
     <div>
       <Modal
@@ -63,43 +44,47 @@ const Delete = ({ openDeleteModal,setOpenDeleteModal, handleDeleteClose, textBut
           },
         }}
       >
-        <Fade in={openDeleteModal}>
-          <Box className="parent" sx={style}>
-            <div
-              className="header"
+        <Box className="parent" sx={style}>
+          <div
+            className="header"
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "flex-end",
+              padding: "28px",
+              border: "none",
+            }}
+          >
+            <Typography
+              onClick={handleDeleteClose}
               style={{
+                color: "white",
+                background: "rgb(245, 126, 42)",
+                borderRadius: "50%",
+                width: 30,
+                height: 30,
+                cursor: "pointer",
                 display: "flex",
                 alignItems: "center",
-                justifyContent: "flex-end",
-                padding: "28px",
-                border: 'none'
+                justifyContent: "center",
               }}
             >
+              X
+            </Typography>
+          </div>
+          {openDelModal && (
+            <>
+              <img src={Deleteimg} alt="" width="150px" />
               <Typography
-                onClick={handleDeleteClose}
+                variant="h4"
                 style={{
-                  color: "white",
-                  background: "rgb(245, 126, 42)",
-                  borderRadius: "50%",
-                  width: 30,
-                  height: 30,
-                  cursor: "pointer",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
+                  fontSize: "28px",
+                  fontWeight: 400,
+                  textAlign: "center",
                 }}
               >
-                X
+                Are You sure you want to Delete this Customer ?
               </Typography>
-            </div>
-            <img src={image} alt="" width="150px" />
-            <Typography
-              variant="h4"
-              style={{ fontSize: "28px", fontWeight: 400, textAlign: "center" }}
-            >
-              {deleteText}
-            </Typography>
-            {!isDeleted && (
               <div style={{ textAlign: "center" }}>
                 <Button
                   type="submit"
@@ -119,9 +104,25 @@ const Delete = ({ openDeleteModal,setOpenDeleteModal, handleDeleteClose, textBut
                   Yes, Delete
                 </Button>
               </div>
-            )}
-          </Box>
-        </Fade>
+            </>
+          )}
+
+          {openSuccessModal && (
+            <>
+              <img src={Successimg} alt="" width="150px" />
+              <Typography
+                variant="h4"
+                style={{
+                  fontSize: "28px",
+                  fontWeight: 400,
+                  textAlign: "center",
+                }}
+              >
+                Menu deleted Successfully
+              </Typography>
+            </>
+          )}
+        </Box>
       </Modal>
     </div>
   );

@@ -16,21 +16,24 @@ import {
 } from "@mui/material";
 import AddBoxIcon from "@mui/icons-material/AddBox";
 import SearchIcon from "@mui/icons-material/Search";  
-import AddNewUserComponents from "../Components/AddNewUserComponents";
 import EditModal from '../EditModal/EditModal';
 import { Password } from "@mui/icons-material";
 import PasswordChangeComponent from "../LockChange/PasswordChangeComponent";
 import Delete from "../Delete/Delete";
+import ParentModalComponent from "../ParentModalComponent/ParentModalComponent";
+// import UserForm from "../UserFormComponent/UserForm";
+// import ModalWrapper from "../../Modal Wrapper/ModalWrapper";
 export default function BasicTable({ data , setData }) {
-  // const [usersData, setUsersData] = useState(users);
   const [currentPage, setCurrentPage] = useState(1);
   const [searchText, setSearchText] = useState("");
   const [noRecords, setNoRecords] = useState(false);
+  const [deleteUserId, setDeleteUserId] = useState(null);
+
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  const [openModal, setOpenModal] = React.useState(false);
-  const [deleteUserId, setDeleteUserId] = useState(null);
+
+  // const [openModal, setOpenModal] = React.useState(false);
   const [openEditModal, setOpenEditModal] = React.useState(false);
   const handleEditOpenModal = () => setOpenEditModal(true)
   const handleEditCloseModal = () => setOpenEditModal(false);
@@ -41,21 +44,24 @@ export default function BasicTable({ data , setData }) {
   const handleLockClose = () => setOpenLockModal(false);
   /////////// delete Modal ///////////////////
   const [openDeleteModal, setOpenDeleteModal] = React.useState(false);
+  const [openDelModal, setOpenDelModal] = React.useState(false);
+  const [openSuccessModal, setOpenSuccessModal] = React.useState(false);
   const handleDeleteOpen = (id) =>{
-    console.log(id, "asdasdas")
+    console.log("id:", id)
     setDeleteUserId(id);
     setOpenDeleteModal(true);
+    setOpenDelModal(true);
+
   } 
   const handleDeleteConfirm = () => {
-    setData(data.filter((user) => user.id !== deleteUserId));
-    setOpenDeleteModal(false);
+    // setData(data.filter((user) => user.id !== deleteUserId));
+    console.log("delete success:",deleteUserId)
+    setOpenDelModal(false);
+    setOpenSuccessModal(true)
   };
 
-const getId =()=> {
-  return deleteUserId
-}
 
-  const handleDeleteClose = () => setOpenDeleteModal(false);
+  const handleDeleteClose = () => {setOpenDeleteModal(false); setOpenDelModal(false); setOpenSuccessModal(false)};
   const handleSearch = (value) => {
     const delay = 500; 
     setTimeout(() => {
@@ -70,6 +76,11 @@ const getId =()=> {
         setData(value === "" ? data : filteredResults);
       }
     }, delay);
+  };
+  const handleSubmit = (values) => {
+    const newData = [...data, { ...values, id: Date.now() }];
+    setData(newData);
+    handleClose();
   };
 
 
@@ -105,9 +116,37 @@ const getId =()=> {
           >
           Add Users
           </Button>
-          <AddNewUserComponents open={open} handleClose={handleClose}  textButton={"Add Users"}/>
+          {/* <ModalWrapper open={open} handleClose={handleClose}>
+            <UserForm
+              handleClose={handleClose}
+              initialValues={{
+                username: '',
+                email: '',
+                password: '',
+                confirmPassword: '',
+                role: 'General Manager',
+              }}
+              onSubmit={handleSubmit}
+              textButton="Add User"
+            />
+          </ModalWrapper> */}
         </div>
       </Box>  
+      <ParentModalComponent
+        open={open}
+        handleClose={handleClose}
+        onSubmit={handleSubmit}
+        initialValues={{
+          username: '',
+          email: '',
+          password: '',
+          confirmPassword: '',
+          role: 'General Manager',
+        }}
+        textButton="Add User"
+      />
+
+      
       <TableContainer component={Paper} className="tableContainer">
         <Table
           sx={{ minWidth: 650 }}
@@ -150,11 +189,18 @@ const getId =()=> {
                     <span className="updatePasswordIcon">
                       <img src="Images/delicon-img.png" alt="" onClick={handleLockOpenModal}/>
                     </span>
+
                     <EditModal  openEditModal={openEditModal} handleEditCloseModal={handleEditCloseModal}/>
                     <PasswordChangeComponent openLockModal={openLockModal} handleLockClose={handleLockClose} textButton={"Save Changes"}/>
-                   < Delete  openDeleteModal={openDeleteModal} handleDeleteClose={handleDeleteClose} user={getId} handleDeleteConfirm={handleDeleteConfirm} textButton={"Yes Delete"} />
-                    <span className="deleteIcon">
-                      <img src="Images/delete-img.png" alt="" onClick={()=> handleDeleteOpen(user.id)}/>
+                   < Delete 
+                    openSuccessModal={openSuccessModal} 
+                    handleDeleteConfirm={handleDeleteConfirm} 
+                    openDeleteModal={openDeleteModal} 
+                    handleDeleteClose={handleDeleteClose} 
+                    openDelModal={openDelModal}
+                    />
+                    <span className="deleteIcon" onClick={()=> handleDeleteOpen(user.id)}>
+                      <img src="Images/delete-img.png" alt="" />
                     </span>
                   </TableCell>  
                 </TableRow>

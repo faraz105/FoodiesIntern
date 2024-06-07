@@ -1,0 +1,16 @@
+@import "../../../assets/styles/partials/allPartialFile";
+.modalBox{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 579px;
+    height: 444px;
+    background-color: $primary_white;
+    border: 2px solid #000;
+    padding: 20px;
+    @include mediaQueryScreen(desktop) {
+        height: 363px !important;
+        width: 388px !important;
+    }
+}

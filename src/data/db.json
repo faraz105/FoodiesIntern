@@ -1,23 +1,6 @@
 {
   "users": [
     {
-      "id": "1",
-      "username": "Leanne Graham",
-      "date": "06-11-2023",
-      "email": "Sincere@april.biz",
-      "roles": "General Manager",
-      "img_path": "person_icon.png",
-      "userImage": "Images/user1Image.png"
-    },
-    {
-      "id": "2",
-      "username": "John Deep",
-      "date": "06-11-2023",
-      "email": "Blog@april.huz",
-      "roles": "Order Taker",
-      "userImage": "Images/user2Image.png"
-    },
-    {
       "id": "3",
       "username": "Jhon Sin",
       "date": "06-11-2023",
@@ -74,14 +57,6 @@
       "userImage": "Images/user4Image.png"
     },
     {
-      "id": "10",
-      "username": "Shine Sin",
-      "date": "06-11-2023",
-      "email": "Sight@june.zic",
-      "roles": "Sales Manager",
-      "userImage": "Images/user5Image.png"
-    },
-    {
       "id": "11",
       "username": "Shine Sin",
       "date": "06-11-2023",
@@ -96,158 +71,6 @@
       "email": "Sight@june.zic",
       "roles": "Sales Manager",
       "userImage": "Images/user2Image.png"
-    },
-    {
-      "id": "13",
-      "username": "Shine Sin",
-      "date": "06-11-2023",
-      "email": "Sight@june.zic",
-      "roles": "Sales Manager",
-      "userImage": "Images/user4Image.png"
-    },
-    {
-      "id": "14",
-      "username": "Shine Sin",
-      "date": "06-11-2023",
-      "email": "Sight@june.zic",
-      "roles": "Sales Manager",
-      "userImage": "Images/user5Image.png"
-    },
-    {
-      "id": "5c29",
-      "username": "Haider Arif",
-      "email": "03201403901haider@gmail.com",
-      "roles": ""
-    },
-    {
-      "id": "fa14",
-      "username": "Rehan",
-      "email": "haider.arif16939@gmail.com",
-      "roles": "General Manager"
-    },
-    {
-      "id": "08c5",
-      "username": "Arif",
-      "email": "haider.arif16939@gmail.com",
-      "roles": "Order Taker"
-    },
-    {
-      "id": "8613",
-      "username": "Arif",
-      "email": "haider.arif16939@gmail.com",
-      "roles": "Order Taker"
-    },
-    {
-      "id": "d6b3",
-      "username": "Rehan",
-      "email": "03201403901haider@gmail.com",
-      "roles": ""
-    },
-    {
-      "id": "994b",
-      "username": "Rehan",
-      "email": "03201403901haider@gmail.com",
-      "roles": "General Manager"
-    },
-    {
-      "id": "523c",
-      "username": "",
-      "email": "",
-      "roles": ""
-    },
-    {
-      "id": "72e6",
-      "username": "Haider Arif",
-      "email": "03201403901haider@gmail.com",
-      "roles": "General Manager"
-    },
-    {
-      "id": "d3e0",
-      "username": "Haider Arif",
-      "email": "03201403901haider@gmail.com",
-      "roles": "General Manager"
-    },
-    {
-      "id": "d50d",
-      "username": "Haider Arif",
-      "email": "03201403901haider@gmail.com",
-      "roles": "General Manager",
-      "userImage": {}
-    },
-    {
-      "id": "565e",
-      "username": "Haider Arif",
-      "email": "haseebanjum8421@gmail.com",
-      "roles": "General Manager",
-      "userImage": {}
-    },
-    {
-      "id": "cdad",
-      "username": "Haider Arif",
-      "email": "03201403901haider@gmail.com",
-      "roles": "",
-      "userImage": {}
-    },
-    {
-      "id": "1e0c",
-      "username": "Haider Arif",
-      "email": "03201403901haider@gmail.com",
-      "roles": "",
-      "userImage": {}
-    },
-    {
-      "id": "e605",
-      "username": "Haider Arif",
-      "email": "haider.arif16939@gmail.com",
-      "roles": "Sales Person",
-      "userImage": {}
-    },
-    {
-      "id": "2e2a",
-      "username": "adsfadsf",
-      "email": "haseebanjum8421@gmail.com",
-      "roles": "Sales Person",
-      "userImage": {}
-    },
-    {
-      "id": "22c5",
-      "username": "adsfadsf",
-      "email": "haseebanjum8421@gmail.com",
-      "roles": "Sales Person",
-      "userImage": {}
-    },
-    {
-      "id": "1b55",
-      "username": "adsfadsf",
-      "email": "haseebanjum8421@gmail.com",
-      "roles": "General Manager",
-      "userImage": {}
-    },
-    {
-      "id": "396c",
-      "username": "dsfafadsf",
-      "email": "",
-      "roles": ""
-    },
-    {
-      "id": "b7f5",
-      "username": "Rehan Jutt",
-      "email": "haider.arif16939@gmail.com",
-      "roles": "Order Taker"
-    },
-    {
-      "id": "e5b5",
-      "username": "Rehan Jutt",
-      "email": "haider.arif16939@gmail.com",
-      "roles": "Order Taker",
-      "date": "2024-06-03T11:37:23.216Z"
-    },
-    {
-      "id": "964c",
-      "username": "Haider Arif",
-      "email": "haseebanjum8421@gmail.com",
-      "roles": "Sales Person",
-      "date": "06/03/2024"
     }
   ]
 }
