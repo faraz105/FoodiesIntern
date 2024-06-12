@@ -1,7 +1,52 @@
 @import "../../assets/styles/partials/allPartialFile";
 
-.MuiTable-root {
-  width: 634px !important;
+.customstyle {
   border-radius: 30px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  flex: 1;
+  padding: 30px;
+  width: 100%;
+  margin-top: 73px;
+
+  table {
+    tbody {
+      tr {
+        background-color: white;
+        border-bottom: 10px solid $primary_pink_light;
+
+        &:last-child {
+          background-color: $primary_pink_light;
+        }
+      }
+      .divider {
+        background-color: $primary_pink_light;
+        td {
+          border: none;
+        }
+      }
+      .secondlast {
+        background-color: $primary_pink_light;
+        td {
+          border: none;
+        }
+      }
+    }
+  }
+}
+
+.customdrop {
+  .MuiSvgIcon-root {
+    margin-right: 30px;
+    margin-top: -3px;
+  }
+  fieldset {
+    border: none;
+  }
+ 
+}
+.selectBuiltinStyle {
+  &:first-child {
+    padding: 0px 0px 0px 0px !important;
+  }
 }

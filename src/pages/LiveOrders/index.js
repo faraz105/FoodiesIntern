@@ -6,9 +6,10 @@ import Summary from "./Summary"
 const index = () => {
   return (
     <div>
-      
+      <div className="jd" style={{ display: 'flex', padding:'30px'}}>
         <Orders/>
         <Summary/>
+        </div>
         
       
     </div>
